@@ -14,6 +14,7 @@ export async function getStaticProps({ params }) {
               title
               excerpt
               slug
+              content
               id
             }
           }
@@ -67,7 +68,7 @@ export default function Tag({ tag }) {
         {tag.posts.nodes.map((post) => (
           <div key={post.id} className="post">
             <h2>{post.title}</h2>
-            <div dangerouslySetInnerHTML={{ __html: post.excerpt }} />
+            <div dangerouslySetInnerHTML={{ __html: post.content }} />
           </div>
         ))}
       </div>
