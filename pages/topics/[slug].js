@@ -59,7 +59,7 @@ export default function Tag({ tag }) {
     console.log(tag);
   }, [tag]);
   // If the tag doesn't exist in WP, show "doesn't exist"
-  if (!tag) return <div>doesn't exist</div>;
+  if (!tag) return <div>doesnt exist</div>;
   return (
     <>
       <h1>Topic: {tag.name}</h1>
