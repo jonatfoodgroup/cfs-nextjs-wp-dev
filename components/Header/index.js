@@ -1,6 +1,10 @@
-import { useState, useEffect } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import Search from '../Search';
+import { useState, useEffect } from "react";
+import { Container, Row, Col, } from "react-bootstrap";
+import Search from "../Search";
+import CompanyLogo from "../CompanyLogo";
+import NavMenu from "./Nav";
+import TalkToAnExpert from "../CTAs/TalkToAnExpert";
+import LanguageSelector from "../LanguageSelector";
 
 const Header = () => {
   return (
@@ -8,15 +12,24 @@ const Header = () => {
       <Container>
         <Row>
           <Col>
-            <h2>Company</h2>
+            <CompanyLogo src="https://via.placeholder.com/200x60" alt="Company Logo" />
+          </Col>
+          <Col>
+            <NavMenu />
           </Col>
           <Col>
             <Search />
           </Col>
+          <Col>
+            <TalkToAnExpert />
+          </Col>
+          <Col>
+            <LanguageSelector />
+          </Col>
         </Row>
       </Container>
     </header>
-  )
-}
+  );
+};
 
 export default Header;

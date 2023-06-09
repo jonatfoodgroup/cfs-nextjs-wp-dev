@@ -1,13 +1,21 @@
 import { useState, useEffect} from 'react';
-import { FormControl } from 'react-bootstrap';
+import { Icon } from '@iconify/react';
 
 const Search = () => {
+  const [search, setSearch] = useState('');
+
+  useEffect(() => {
+    console.log(search);
+  }, [search]);
   return (
-    <FormControl
-      placeholder="Search"
-      aria-label="Search"
-      aria-describedby="basic-addon1"
-    />
+    <>
+      <form>
+        <input type="text" placeholder="Search" onChange={(e) => setSearch(e.target.value)} value={search} />
+        <button type="submit">
+          <Icon icon="bi:search" />
+        </button>
+      </form>
+    </>
   )
 }
 
