@@ -1,0 +1,47 @@
+
+.whatsNextBlockLink {
+  text-decoration: none;
+}
+
+  .whatsNextBlock {
+    background-color: white;
+    text-align: center;
+    border:2px solid white;
+    border-radius: 6px;
+    padding: 1em;
+ 
+    justify-content: space-around;
+    align-items: center;
+    max-width: 300px;
+    margin: auto;
+
+
+}
+.whatsNextBlock a {
+  text-decoration: none;
+}
+
+@media (min-width: 576px) {
+  .whatsNextBlock {
+    text-align: left;
+    display: flex;
+    align-items: center;
+
+  }
+}
+.whatsNextBlock:hover {
+  border:2px solid gray;
+}
+
+.whatsNextBlock a {
+  text-decoration: none;
+
+}
+.whatsNextIcon {
+}
+
+
+.sectionUnderline {
+  background: linear-gradient(to right, white, #A7A9AC, white);
+  height: 23px;
+}

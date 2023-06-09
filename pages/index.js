@@ -12,6 +12,11 @@ export async function getStaticProps() {
             content
             excerpt
             id
+            author {
+              node {
+                name
+              }
+            }
           }
         }
       }
@@ -36,10 +41,18 @@ export default function Home({ posts }) {
         {posts.map((post) => (
           <div key={post.id} className="post">
             <h2>{post.title}</h2>
+
+            <h3>{post.author.node.name}</h3>
+
             <div dangerouslySetInnerHTML={{ __html: post.excerpt }} />
           </div>
+
+          
         ))}
       </div>
+      
     </>
+    
   );
 }
+
