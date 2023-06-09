@@ -7,7 +7,7 @@ const Footer = () => {
       <Container>
         <Row>
           <Col>
-            <h2>Company</h2>
+            <h2>Footer</h2>
           </Col>
         </Row>
       </Container>
