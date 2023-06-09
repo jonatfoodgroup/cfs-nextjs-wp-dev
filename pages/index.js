@@ -1,41 +1,13 @@
-import { gql } from "@apollo/client";
-import client from "../app/apollo-client";
-import { WhatsNext } from "@/components/ExampleModule";
-export async function getStaticProps() {
-  const { data } = await client.query({
-    query: gql`
-      query Posts {
-        posts {
-          nodes {
-            title
-            content
-            excerpt
-            id
-            author {
-              node {
-                name
-              }
-            }
-          }
-        }
-      }
-    `,
-  });
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-  return {
-    props: {
-      posts: data.posts.nodes
-    },
- };
-}
-
-export default function Home({ posts }) {
+export default function Home() {
   return (
     <>
-      <h1>Next.js + Apollo Client</h1>    
-      <WhatsNext />  
+      <Header />
+      <Footer />
     </>
-    
   );
 }
 
