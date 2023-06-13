@@ -16,7 +16,7 @@ import Tags from "@/components/Topics";
 import Posts from "@/components/Posts";
 import Pages from "@/components/Pages";
 import BrandSelector from "@/components/BrandSelector";
-
+import SubscribeModal from "@/components/Modals/Subscribe";
 import LayoutEditor from "@/components/Drawers/LayoutEditor";
 
 
@@ -67,6 +67,7 @@ export default function Home() {
   return (
     <>
       <PageMeta title={pageMeta.title} description={pageMeta.description} />
+      <SubscribeModal />
       <LayoutEditor layout={layout} setLayout={setLayout} />
       {layout.map((section) => (
         <React.Fragment key={section.id}>

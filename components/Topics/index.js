@@ -4,6 +4,7 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import GET_TAGS from "@/app/graphql/queries/GET_TAGS";
 import client from "@/app/apollo-client";
+import { Badge } from "react-bootstrap";
 
 const Tags = () => {
   const { loading, error, data } = useQuery(GET_TAGS, {
@@ -17,8 +18,9 @@ const Tags = () => {
     <ul>
       {data.tags.nodes.map((tag, index) => (
         <li key={index}>
-          <h2>{tag.name}</h2>
-          <p>{tag.description}</p>
+          <Badge pill variant="primary">
+            {tag.name}
+          </Badge>
         </li>
       ))}
     </ul>

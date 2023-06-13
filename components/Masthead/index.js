@@ -1,17 +1,20 @@
-import { useState, useEffect } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { useState, useEffect } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+// Import local masthead styles
+import styles from "./masthead.module.css";
 
 const Masthead = () => {
   return (
-    <header>
+    <section className={styles.masthead}>
       <Container>
         <Row>
           <Col>
+            <h1>Masthead</h1>
           </Col>
         </Row>
       </Container>
-    </header>
-  )
-}
+    </section>
+  );
+};
 
 export default Masthead;

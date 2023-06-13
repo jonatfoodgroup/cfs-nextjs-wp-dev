@@ -1,0 +1,25 @@
+.menuBox {
+  z-index: 5;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
+}
+
+.searchBox {
+  position: relative;
+}
+
+@media all and (max-width: 767px) {
+  .searchBox {
+    display: none !important;
+  }
+  .menuBox {
+    display: none !important;
+  }
+}

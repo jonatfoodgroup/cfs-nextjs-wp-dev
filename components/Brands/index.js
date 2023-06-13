@@ -4,6 +4,7 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import GET_BRANDS from "@/app/graphql/queries/GET_BRANDS";
 import client from "@/app/apollo-client";
+import { Badge } from "react-bootstrap";
 
 const Brands = () => {
   const { loading, error, data } = useQuery(GET_BRANDS, {
@@ -17,8 +18,9 @@ const Brands = () => {
     <ul>
       {data.brands.nodes.map((brand, index) => (
         <li key={index}>
-          <h2>{brand.title}</h2>
-          <p>{brand.description}</p>
+          <Badge pill variant="primary">
+            {brand.title}
+          </Badge>
         </li>
       ))}
     </ul>
