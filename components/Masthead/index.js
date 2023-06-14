@@ -5,15 +5,15 @@ import styles from "./masthead.module.css";
 
 const Masthead = () => {
   return (
-    <section className={styles.masthead}>
-      <Container>
+    <>
+      <Container fluid className={styles.masthead}>
         <Row>
           <Col>
-            <h1>Masthead</h1>
+            <h1 className={styles.title}>Masthead</h1>
           </Col>
         </Row>
       </Container>
-    </section>
+    </>
   );
 };
 

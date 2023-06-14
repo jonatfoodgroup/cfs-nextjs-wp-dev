@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Masthead from "@/components/Masthead";
+import ProductTable from "@/components/Table";
 // Components
 const ProductsPage = ({ products }) => {
   useEffect(() => {
@@ -19,6 +20,7 @@ const ProductsPage = ({ products }) => {
     <>
       <Header />
       <Masthead />
+      <ProductTable />
     </>
   ); 
 };
@@ -46,43 +48,5 @@ export async function getStaticProps() {
     },
   };
 }
-
-const ProductTable = () => {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    const getProducts = async () => {
-      const { data } = await client.query({
-        query: gql`
-          query MyQuery {
-            products {
-              nodes {
-                id
-                title
-                slug
-                excerpt
-              }
-            }
-          }
-        `,
-      });
-      setProducts(data.products.nodes);
-    };
-    getProducts();
-  }, []);
-  return (
-    <div>
-      <h1>Product Table</h1>
-      <ul>
-        {products &&
-          products.map((product) => (
-            <li key={product.id}>
-              <h2>{product.title}</h2>
-              <p>{product.excerpt}</p>
-            </li>
-          ))}
-      </ul>
-    </div>
-  );
-};
 
 export default ProductsPage;
