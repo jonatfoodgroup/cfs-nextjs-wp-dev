@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
+import { FormControl } from "react-bootstrap";
 
-const Typeahead =  ({
-  placeholder
-}) => {
+const Typeahead = ({ placeholder }) => {
   const [value, setValue] = useState("");
 
   useEffect(() => {
@@ -10,20 +9,28 @@ const Typeahead =  ({
   }, [value]);
   return (
     <>
-    <form>
-      <input type="text" placeholder={placeholder}  onChange={(e) => setValue(e.target.value)}  value={value} />
-    </form>
-    <TypeaheadResults />
+      <form sx={{ width: "100%" }}>
+        <FormControl
+          type="text"
+          placeholder={placeholder}
+          className="mr-sm-2"
+          value={value}
+          sx={{marginBottom: '40px', display: 'block' }}
+          onChange={(e) => setValue(e.target.value)}
+        />
+      </form>
+      {value.length > 0 && <button onClick={() => setValue("")}>Clear</button>}
+      {value.length >= 3 && <TypeaheadResults />}
     </>
-  )
-}
+  );
+};
 
-const TypeaheadResults = () =>  {
+const TypeaheadResults = ({ results }) => {
   return (
     <div>
       <p>Results</p>
     </div>
-  )
-}
+  );
+};
 
 export default Typeahead;

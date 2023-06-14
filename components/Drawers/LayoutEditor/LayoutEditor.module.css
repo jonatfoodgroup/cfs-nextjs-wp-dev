@@ -1,0 +1,8 @@
+.reorderIcon:hover {
+  cursor: move;
+  opacity: 1;
+}
+
+.reorderIcon {
+  opacity: .25;
+}
