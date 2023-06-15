@@ -1,4 +1,4 @@
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import { gql } from "@apollo/client";
 import client from "../..//app/apollo-client";
 import Header from "@/components/Header";

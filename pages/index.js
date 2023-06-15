@@ -3,13 +3,16 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "../app/globals.css"; // @Jon to move this to the layout
 
 // Global modules
+import WhatsNext from "@/components/WhatsNext";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import PageMeta from "@/components/PageMeta";
 
 // Local modules
+
 import Section from "@/components/Section";
 import Categories from "@/components/Categories";
 import Tags from "@/components/Topics";
@@ -59,6 +62,11 @@ export default function Home() {
         component: <Section title={"Pages"}><Pages /></Section>,
       },
       {
+        id: 9,
+        name: "WhatsNext",
+        component: <WhatsNext />,
+      },
+            {
         id: 10,
         name: "Footer",
         component: <Footer />,

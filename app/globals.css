@@ -1,4 +1,22 @@
+
+
+@import url("https://use.typekit.net/cjd3qpj.css");
+/* avaialbe font wieghts: 400, 700, 900 */
 :root {
+
+
+
+  --cfs-font: azo-sans-web, sans-serif;
+
+  /* setup CFS brand color vars : */
+  
+--cfs-red: #B80720;
+--cfs-accent:#D02630;
+--cfs-black:#000000;
+--cfs-white:#ffffff;
+--cfs-gray: #404040;
+--cfs-lightgray:#F7F5F2;
+
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
@@ -86,13 +104,16 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+
+  font-family: var(--cfs-font);
+  color: (var(--cfs-black));
+  /*color: rgb(var(--foreground-rgb));*/
+ /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb));*/
 }
 
 a {
@@ -102,6 +123,6 @@ a {
 
 @media (prefers-color-scheme: dark) {
   html {
-    color-scheme: dark;
+  /*  color-scheme: dark;*/
   }
 }

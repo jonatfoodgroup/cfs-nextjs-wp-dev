@@ -32,9 +32,9 @@ export function SectionUnderline() {
     );
   }
   
-  
-  export function WhatsNext() {
+  const WhatsNext = () => {
     return (
+ 
       <Container>
         <Row>
           <h2>What’s next?</h2>
@@ -45,7 +45,7 @@ export function SectionUnderline() {
           <Col md>
             <WhatsNextBlock
               link={'https://google.com'}
-              icon={'https://placehold.co/80x80'}
+              icon={'https://campbellsf1dev.wpengine.com/wp-content/uploads/2023/06/icon-cart.png'}
               alttext={'some alt text'}
               sectionCopy={'Browse products from our catalog'}
               linkCopy={'View Products'}
@@ -56,24 +56,24 @@ export function SectionUnderline() {
           <Col md>
             <WhatsNextBlock
               link={'https://google.com'}
-              icon={'https://placehold.co/80x80'}
+              icon={'https://campbellsf1dev.wpengine.com/wp-content/uploads/2023/06/icon-bubble.png'}
               alttext={'some alt text'}
-              sectionCopy={'Speak with a Campbell’s sales rep.'}
+              sectionCopy={'Speak with a Campbell’s sales represntative.'}
               linkCopy={'Contact Us'}
             />
           </Col>
           <Col md>
             <WhatsNextBlock
               link={'https://google.com'}
-              icon={'https://placehold.co/80x80'}
+              icon={'https://campbellsf1dev.wpengine.com/wp-content/uploads/2023/06/icon-bulb.png'}
               alttext={'some alt text'}
-              sectionCopy={'View the latest trends and insights for your biz.'}
+              sectionCopy={'View the latest trends and insights for your business.'}
               linkCopy={'Get Inspired'}
             />
           </Col>
         </Row>
       </Container>
-    );
+    )
   }
   
-  
+  export default WhatsNext;
