@@ -23,6 +23,14 @@ const BrandSelector = () => {
     <Container>
       <Row>
         <Col>
+        <h1>heading one</h1>
+        <h2>heading two</h2>
+        <h2 class="centered head-underline">heading two centered class</h2>
+        <h3 class="centered">H3 Check out our complete portfolio of iconic brands</h3>
+
+        <h4 class="centered">Check out our complete portfolio of iconic brands</h4>
+
+
           <Tabs defaultActiveKey="all" id="brands">
             <Tab eventKey="all" title="All">
             </Tab>
@@ -35,12 +43,17 @@ const BrandSelector = () => {
       </Row>
       <Row>
         <Col>
+      
           <ul>
             {
               (data.brands.nodes.length > 0) &&
             data.brands.nodes.map((brand) => (
               <li key={brand.id}>
                 <a href={`/brands/${brand.slug}`}>{brand.title}</a>
+                <img src />
+                help to get feat image for each?
+                excepert?
+
               </li>
             ))}
           </ul>

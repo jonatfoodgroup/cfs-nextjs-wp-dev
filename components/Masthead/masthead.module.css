@@ -1,8 +1,8 @@
 .masthead {
-  padding: 1rem;
+  padding: 0;
   text-align: center;
-  background-color: black;
   height: 80vh;
+  margin: 0;
 }
 .masthead__title {
   font-size: 2rem;

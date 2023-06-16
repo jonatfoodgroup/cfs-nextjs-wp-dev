@@ -9,6 +9,7 @@ import "../app/globals.css"; // @Jon to move this to the layout
 import WhatsNext from "@/components/WhatsNext";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Masthead from "@/components/Masthead";
 import PageMeta from "@/components/PageMeta";
 
 // Local modules
@@ -36,6 +37,12 @@ export default function Home() {
         name: "Header",
         component: <Header />,
       },
+      {
+        id: 2,
+        name: "Masthead",
+        component: <Masthead />,
+      },
+      
       {
         id: 6,
         name: "Brand Selector",
