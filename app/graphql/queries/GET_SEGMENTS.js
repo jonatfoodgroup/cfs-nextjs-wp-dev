@@ -1,13 +1,13 @@
 import { gql } from '@apollo/client';
 
-const GET_BRANDS = gql`
-  query GET_BRANDS {
-    brands(first:100)  {
+const GET_SEGMENTS = gql`
+  query GET_SEGMENTS {
+    segments {
       nodes {
+        excerpt
         id
         title
         slug
-        menuOrder
         featuredImage {
           node {
             guid
@@ -23,4 +23,4 @@ const GET_BRANDS = gql`
   }
 `
 
-export default GET_BRANDS;
+export default GET_SEGMENTS;

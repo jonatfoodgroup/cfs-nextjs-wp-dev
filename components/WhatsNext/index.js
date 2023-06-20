@@ -5,13 +5,6 @@ import styles from "./whatsnext.module.css";
 
 
 
-// component for heading underline:
-export function SectionUnderline() {
-    return (
-      <hr
-      className={styles.sectionUnderline} />
-    );
-  }
 // make a component that inlcudes an image, copy and a link
   export function WhatsNextBlock({link, icon, alttext, sectionCopy, linkCopy}) {
   
@@ -35,19 +28,18 @@ export function SectionUnderline() {
   const WhatsNext = () => {
     return (
  
-      <Container>
-        <Row>
-          <h2>What’s next?</h2>
-          <SectionUnderline />
-        </Row>
-  
+<Container className={styles.whatsNextBlockWrap}>
+  <Row>
+    <Col><h4 class="centered head-underline red">What's Next</h4>
+    </Col>
+    </Row>
         <Row>
           <Col md>
             <WhatsNextBlock
               link={'https://google.com'}
               icon={'https://campbellsf1dev.wpengine.com/wp-content/uploads/2023/06/icon-cart.png'}
               alttext={'some alt text'}
-              sectionCopy={'Browse products from our catalog'}
+              sectionCopy={'Browse products from our catalog.'}
               linkCopy={'View Products'}
             />
   
@@ -62,12 +54,13 @@ export function SectionUnderline() {
               linkCopy={'Contact Us'}
             />
           </Col>
+
           <Col md>
             <WhatsNextBlock
               link={'https://google.com'}
               icon={'https://campbellsf1dev.wpengine.com/wp-content/uploads/2023/06/icon-bulb.png'}
               alttext={'some alt text'}
-              sectionCopy={'View the latest trends and insights for your business.'}
+              sectionCopy={'View the latest busines trends and insights.'}
               linkCopy={'Get Inspired'}
             />
           </Col>

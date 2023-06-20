@@ -1,0 +1,30 @@
+.enlSignup {
+    background-color: var(--cfs-accent);
+    color: var(--cfs-white);
+    padding: 1em;
+}
+.enlSignup h2 {
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--cfs-white);
+}
+
+    input[type="text"].enlSignupInput {
+        background-color: var(--cfs-white);
+        color: var(--cfs-black);
+        border: 0px;;
+        border-radius: 0;
+        padding: 10px;
+        min-width: 50%;
+       /* width: 100%;*/
+    }
+
+
+        input[type="submit"].enlSignupSubmit {
+            background-color: var(--cfs-black);
+            color: var(--cfs-white);
+            border: 0px;
+            border-radius: 0;
+            padding: 10px 20px;
+           
+        }
