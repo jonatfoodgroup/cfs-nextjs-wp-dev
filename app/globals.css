@@ -168,9 +168,19 @@ h4 {
   text-align: center;
 }
 
+/* buttons here! */
 
-  
-
+.btn-primary {
+  border: 2px solid var(--cfs-red);
+  border-radius: 0;
+  background-color: var(--cfs-white);
+  color:var(--cfs-black);
+  font-weight: 700;
+}
+.btn-primary:hover {
+  background-color: var(--cfs-accent);
+  border: 2px solid var(--cfs-red);
+}
  /* colors as classes */
  .red {
   color: var(--cfs-red);
