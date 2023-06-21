@@ -12,14 +12,7 @@ import Header from "@/components/Header";
 import Masthead from "@/components/Masthead";
 import PageMeta from "@/components/PageMeta";
 import { Container, Row, Col } from "react-bootstrap";
-
-// Local modules
-
 import Section from "@/components/Section";
-import Categories from "@/components/Categories";
-import Tags from "@/components/Topics";
-import Posts from "@/components/Posts";
-import Pages from "@/components/Pages";
 import BrandSelector from "@/components/BrandSelector";
 import SubscribeModal from "@/components/Modals/Subscribe";
 import LayoutEditor from "@/components/Drawers/LayoutEditor";
