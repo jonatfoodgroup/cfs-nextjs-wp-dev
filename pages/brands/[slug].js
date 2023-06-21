@@ -31,7 +31,7 @@ export async function getStaticPaths() {
   const { data } = await client.query({
     query: gql`
       query Brand {
-        brands {
+        brands(first:100) {
           nodes {
             slug
           }
