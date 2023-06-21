@@ -7,7 +7,15 @@ const GET_BRANDS = gql`
         id
         title
         slug
-        menuOrder
+        menuOrder 
+        brandFields {
+          fieldGroupName
+          brandLogo {
+            altText
+              sourceUrl
+              id
+          }
+        }
         featuredImage {
           node {
             guid

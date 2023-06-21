@@ -42,16 +42,24 @@ const BrandSelector = () => {
         <Container>
           <Row>
 
-
-      
             {
               (data.brands.nodes.length > 0) &&
             data.brands.nodes.map((brand) => (
             
             <Col key={brand.id} className={styles.w20}>
                {/* <a href={`/brands/${brand.slug}`}>{brand.title}</a> */}
-              <a href="#" data-toggle="modal" data-target="#exampleModalCenter">{brand.title}
-                <img src={brand.featuredImage.node.guid} className="img-fluid" /></a> </Col>
+              <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
+                {brand.title}
+                
+                
+                <img src={brand.featuredImage.node.guid} className="img-fluid" />
+               {/* why doesnt this work? 
+               
+                <img src={brand.brandFields.brandLogo.sourceUrl} className="img-fluid" />
+                */}
+    
+
+               </a> </Col>
             ))}
 
 
