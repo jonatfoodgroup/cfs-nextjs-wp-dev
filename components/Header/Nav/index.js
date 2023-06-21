@@ -3,12 +3,12 @@ import { Button, Popover, OverlayTrigger, FormControl } from "react-bootstrap";
 import Tags from "@/components/Topics";
 import BrandList from "@/components/Brands";
 import styles from "./Nav.module.css";
+import BrandsMenu from "./Brands";
 
 const Brands = () => {
   return (
     <>
-      <h2>Brands</h2>
-      <BrandList />
+      <BrandsMenu />
     </>
   );
 };
