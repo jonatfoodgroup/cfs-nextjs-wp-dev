@@ -14,4 +14,6 @@ const GET_PAGES = gql`
   }
 `;
 
+
+
 export default GET_PAGES;

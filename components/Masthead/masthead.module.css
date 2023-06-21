@@ -1,9 +1,26 @@
 .masthead {
-  padding: 1rem;
+  padding: 0;
   text-align: center;
-  background-color:#e8e8e8;
-  height: 80vh;
+  
+  margin: 0;
+  margin-bottom: 5vh;
 }
+.homeMasthead {
+  /* pur a placeholder image here */
+
+  background-image: url("https://via.placeholder.com/600x800");
+  background-size: cover;
+  min-height: 80vh;
+}
+
+@media screen and (min-width: 768px) {
+  .homeMasthead {
+  min-height: 350px;
+  background-image: url("https://campbellsf1dev.wpengine.com/wp-content/uploads/2023/06/fpo-masted.jpg");
+  }
+
+}
+  
 .masthead__title {
   font-size: 2rem;
   margin: 0;
