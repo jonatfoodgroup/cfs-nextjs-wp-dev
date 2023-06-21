@@ -7,11 +7,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../../app/globals.css";
 
 // Global modules
-import WhatsNext from "@/components/WhatsNext";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import EnlSignup from "@/components/EnlSignup";
-
+import BrandMasthead from "@/components/BrandMasthead";
+import BrandPromo from "@/components/BrandPromotionBanner";
+import ItemCarousel from "@/components/Carousels/ItemCarousel";
 // Get the tag by slug from the wordpress graphql api
 export async function getStaticProps({ params }) {
   const { data, loading, error } = await client.query({
@@ -56,10 +54,9 @@ export default function Brand({ brand }) {
   if (!brand) return <div>doesnt exist</div>;
   return (
     <>
-      <Header />
-      <WhatsNext />
-      <EnlSignup />
-      <Footer />
+     <BrandMasthead />
+     <BrandPromo />
     </>
   );
 }
+
