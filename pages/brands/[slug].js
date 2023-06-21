@@ -47,16 +47,11 @@ export async function getStaticPaths() {
 }
 
 export default function Brand({ brand }) {
-  useEffect(() => {
-    console.log(brand);
-  }, [brand]);
-
-  if (!brand) return <div>doesnt exist</div>;
+  if (!brand) return null;
   return (
     <>
-     <BrandMasthead />
-     <BrandPromo />
+      <BrandMasthead slug={brand.slug} />
+      <BrandPromo />
     </>
   );
 }
-

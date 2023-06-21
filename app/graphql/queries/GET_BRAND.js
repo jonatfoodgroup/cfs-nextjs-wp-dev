@@ -1,14 +1,27 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 const GET_BRAND = gql`
-query Brand($slug: ID!) {
-  brand(id: $slug, idType: SLUG) {
-    title
-    content
-    excerpt
-    slug
+  query Brand($slug: ID!) {
+    brand(id: $slug, idType: SLUG) {
+      title
+      content
+      excerpt
+      slug
+      brandFields {
+        brandIntroHeadline
+        brandLogo {
+          sourceUrl
+        }
+        brandleftimage {
+          sourceUrl
+        }
+        brandrightimage {
+          sourceUrl
+        }
+        
+      }
+    }
   }
-}
 `;
 
 export default GET_BRAND;
