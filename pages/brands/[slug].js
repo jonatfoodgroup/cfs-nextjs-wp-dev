@@ -1,6 +1,8 @@
 import { gql } from "@apollo/client";
 import client from "../../app/apollo-client";
 import { useEffect } from "react";
+import GET_BRAND from "@/app/graphql/queries/GET_BRAND";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../app/globals.css";
 
@@ -12,27 +14,8 @@ import EnlSignup from "@/components/EnlSignup";
 
 // Get the tag by slug from the wordpress graphql api
 export async function getStaticProps({ params }) {
-  const { data } = await client.query({
-    query: gql`
-      query Brand($slug: ID!) {
-        brand(id: $slug, idType: SLUG) {
-          title
-          content
-          excerpt
-          slug
-          featuredImage {
-            node {
-              guid
-              id
-              slug
-              description
-              altText
-              uri
-            }
-          }
-        }
-      }
-    `,
+  const { data, loading, error } = await client.query({
+    query: GET_BRAND,
     variables: {
       slug: params.slug,
     },
