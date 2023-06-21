@@ -241,3 +241,12 @@ h4 {
   opacity: 0.75;
 
 }
+
+
+/* brand banners */
+.promotionBanner {
+  margin:2.5em auto;
+  display: flex;
+  max-width: 100%;
+  height: auto;
+}

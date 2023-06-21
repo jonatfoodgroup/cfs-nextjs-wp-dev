@@ -1,0 +1,78 @@
+.brandMasthead {
+    background-color: var(--cfs-lightgray);
+    padding: 2rem 0;
+}
+
+.brandMastheadIntro {
+    margin: auto;
+    text-align: center;
+}
+
+@media (min-width: 1000px) {
+    .brandMastheadIntro {
+        max-width: 30%;
+    }
+    
+}
+
+.brandImageLeft {
+    height: auto;
+    margin-top: -70px;
+    max-width: 250px;
+}
+
+.brandImageRight{
+    height: auto;
+    margin-top: 0px;
+    max-width: 250px;
+    /* these might cause trbl*/
+    margin-left: 50%;
+    margin-bottom: -80px;
+}
+
+/*
+.brandImageLeft, .brandImageRight {
+    max-width: 320px;
+    transition: all 0.4s;
+
+}
+*/
+  
+
+@media (min-width: 768px) {
+   
+.brandImageLeft {
+    height: auto;
+    margin-top: -50px;
+   /* position:absolute;
+    max-width: 450px;*/
+    max-width: 100%;
+    margin-bottom: -100px;
+}
+
+.brandImageRight{
+    height: auto;
+    margin-top: -50px;
+    max-width: 100%;
+    margin-left:auto;
+    margin-bottom: -100px;
+}
+}
+
+/*
+.brandImageLeft {
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    max-width: 480px;
+    margin-top: -1rem;
+}
+
+.brandImageRight {
+    float:right;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    max-width: 480px;
+    margin-top: -1rem;
+
+}*/
