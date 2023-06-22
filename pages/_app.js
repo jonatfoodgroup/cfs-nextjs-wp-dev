@@ -1,13 +1,19 @@
 import Layout from "@/components/Layout";
 import LayoutEditor from "@/components/Drawers/LayoutEditor";
+import { useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "../app/globals.css";
 
 export default function MyApp({ Component, pageProps }) {
+  const [layout, setLayout] = useState([]);
   return (
     <>
-      <LayoutEditor />
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+      <LayoutEditor layout={layout} setLayout={setLayout} />
+      <Layout layout={layout}>
+        <Component {...pageProps} />
+      </Layout>
     </>
   )
 }

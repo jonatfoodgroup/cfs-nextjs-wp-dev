@@ -178,6 +178,9 @@ const DrawerHeader = ({ setShow, handleSave, setLayout, layout }) => {
 };
 
 const ModuleLibrary = ({ modules = [], layout = [], setLayout = () => {} }) => {
+  useEffect(() => {
+    console.log(layout);
+  }, [layout]);
   return (
     <section className={styles.moduleLibrary}>
       <h2 style={{ fontSize: "1rem" }}>Module Library</h2>
@@ -198,9 +201,9 @@ const ModuleLibrary = ({ modules = [], layout = [], setLayout = () => {} }) => {
                   setLayout([...layout, module]);
                 }}
               >
-                <Icon icon="mdi:plus" color="#fff" />
+                <Icon icon="mdi:plus" color="#fff" /><h3 className={styles.cardTitle}>{module.name}</h3>
               </Button>
-              <h3 className={styles.cardTitle}>{module.name}</h3>
+              
             </Col>
           </Row>
         );
