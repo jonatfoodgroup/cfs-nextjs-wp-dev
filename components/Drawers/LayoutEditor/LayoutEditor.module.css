@@ -1,0 +1,56 @@
+/* Variables in css */
+.offcanvas, .bgGray {
+  background-color: #2B2D36;
+}
+.bgDarker {
+  background: #202128;
+}
+.reorderIcon:hover {
+  cursor: move;
+  opacity: 1;
+}
+
+.reorderIcon {
+  opacity: .25;
+}
+
+.buttonBar {
+  
+}
+
+.card {
+  background: #2B2D36;
+  padding: 10;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.cardTitle {
+  color: #fff;
+  font-size: .875rem;
+}
+
+.moduleLibrary {
+  padding: 20px;
+  background: #202128;
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .buttonBar, .displayNoneMobile {
+    display: none !important;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .buttonBar, .displayNoneMobile {
+    display: none !important;
+  }
+  .stickyFooterMobile {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: blue;
+  }
+}
+

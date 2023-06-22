@@ -1,12 +1,44 @@
+// Structure
+import { Container, Row, Col } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+// Modules
 import Section from "@/components/Section";
-import { useState } from "react";
+import BreadCrumb from "@/components/Breadcrumb";
+import ActionGroup from "@/components/ActionGroup";
+import Follow from "@/components/Follow";
+import Print from "@/components/Print";
+import Share from "@/components/Share";
+
 
 const RecipeArchive = () => {
   return (
     <>
-      <Section title="Recipe Archive" />
-    </>
-  )
-}
+      <Container>
+        <Row>
+          <Col>
+            <BreadCrumb
+              items={[
+                { label: "Home", path: "/" },
+                { label: "Recipes", path: "/recipes" },
+              ]}
+              currentPath="Recipe Archive"
+            />
+          </Col>
+          <Col className="text-right">
+            <ActionGroup>
+              <Follow />
+              <Print />
+              <Share />
+            </ActionGroup>
+          </Col>
+        </Row>
+      </Container>
 
-export default RecipeArchive
+      <Section title="Recipe Archive" />
+
+    </>
+  );
+};
+
+export default RecipeArchive;

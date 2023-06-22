@@ -1,6 +1,10 @@
+
+// Format can be basic, carousel, or grid
 const List = ({
   items = [],
   count = 0,
+  format = 'basic',
+  loadMore = () => {},
 }) => {
   return (
     <ul>
