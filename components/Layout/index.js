@@ -14,13 +14,20 @@ export default function Layout({ children, layout }) {
       once: true,
     });
   }, []);
+  useEffect(() => {
+    console.log(layout);
+  }, [layout]);
   return (
     <>
       <Header />
-      {children}
-      {layout.map((section) => (
-        <React.Fragment key={section.id}>{section.component}</React.Fragment>
-      ))}
+        {
+          layout &&
+          layout.map((section, index) => {
+            <section key={index}>
+              {section.component}
+            </section>
+          })
+        }
       <WhatsNext />
       <EnlSignup />
       <Footer />

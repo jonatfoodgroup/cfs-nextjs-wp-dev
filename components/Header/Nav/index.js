@@ -1,5 +1,6 @@
 import { useState} from "react";
-import { Button, Popover, OverlayTrigger } from "react-bootstrap";
+import { Button, Popover, OverlayTrigger, FormControl } from "react-bootstrap";
+import Tags from "@/components/Topics";
 import styles from "./Nav.module.css";
 import BrandsMenu from "./Brands";
 import SegmentsMenu from "./Segments";

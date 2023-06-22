@@ -56,14 +56,6 @@ const LayoutEditor = ({ layout, setLayout }) => {
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
 
-  useEffect(() => {
-    if (layout) {
-      setShow(true);
-    } else {
-      setShow(false);
-    }
-  }, [layout]);
-
   const handleClose = () => setShow(false);
 
   const handleSave = () => {
@@ -132,14 +124,14 @@ const LayoutEditor = ({ layout, setLayout }) => {
                 right: 0,
               }}
             >
-              <Col xs={12} md={3}>
+              <Col xs={12} md={2}>
                 <ModuleLibrary
                   modules={modules.sort((a, b) => (a.name > b.name ? 1 : -1))}
                   layout={layout}
                   setLayout={setLayout}
                 />
               </Col>
-              <Col xs={12} md={7}>
+              <Col xs={12} md={8}>
                 <LayoutSection layout={layout} setLayout={setLayout} />
               </Col>
             </Row>
