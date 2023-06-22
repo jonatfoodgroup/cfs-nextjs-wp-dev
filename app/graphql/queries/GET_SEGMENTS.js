@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 const GET_SEGMENTS = gql`
   query GET_SEGMENTS {
-    segments {
+    segments(first:100) {
       nodes {
         excerpt
         id

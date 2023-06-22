@@ -1,13 +1,5 @@
 import React, { use, useState, useEffect } from "react";
-// Global CSS includes should be moved higher up in the templating system
-import "bootstrap/dist/css/bootstrap.min.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "../app/globals.css";
 
-// Global modules
-import WhatsNext from "@/components/WhatsNext";
-import Footer from "@/components/Footer";
 import Masthead from "@/components/Masthead";
 import PageMeta from "@/components/PageMeta";
 import Section from "@/components/Section";
@@ -15,7 +7,6 @@ import SectionNoContainer from "@/components/Section/SectionNoContainer";
 import BrandSelector from "@/components/BrandSelector";
 import SubscribeModal from "@/components/Modals/Subscribe";
 import ItemCarousel from "@/components/Carousels/ItemCarousel";
-import EnlSignup from "@/components/EnlSignup";
 import HomeRecipes from "@/components/HomeRecipes";
 import HomeContent from "@/components/HomeContent";
 import { useQuery } from "@apollo/client";

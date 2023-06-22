@@ -5,12 +5,6 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../app/globals.css";
 
-// Global modules
-import WhatsNext from "@/components/WhatsNext";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import EnlSignup from "@/components/EnlSignup";
-
 // Get the tag by slug from the wordpress graphql api
 export async function getStaticProps({ params }) {
   const { data } = await client.query({
@@ -87,7 +81,6 @@ export default function Segment({ segment }) {
   if (!segment) return <div>doesnt exist</div>;
   return (
     <>
-      <Header />
 
       <Container>
         <Row>
@@ -130,9 +123,6 @@ export default function Segment({ segment }) {
         </Row>
       </Container>
 
-      <WhatsNext />
-      <EnlSignup />
-      <Footer />
     </>
   );
 }

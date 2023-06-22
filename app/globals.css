@@ -286,3 +286,7 @@ a img:hover {
   cursor: pointer;
   opacity: 0.75;
 }
+
+.hidden {
+  display: none !important;
+}
