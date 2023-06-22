@@ -34,103 +34,86 @@ export default function Home() {
   const pageMeta = {
     title: "Home",
     description: "Home page description",
-  }
+  };
 
   const [layout, setLayout] = useState([
-      {
-        id: 2,
-        name: "Masthead",
-        component: <Masthead />,
-      },
-      {
-        id: 3,
-        name: "Home",
-        component:
+    {
+      id: 2,
+      name: "Masthead",
+      component: <Masthead />,
+    },
+    {
+      id: 3,
+      name: "Home",
+      component: (
         <Section title={"Our Family of Brands"}>
-        <HomeContent />
-        </Section>,
-        
-      },
-      {
-        id: 5,
-        name: "Brand Selector",
-        component: <BrandSelector />,
-      },
-      {
-
-        id:6,
-        name: "Recipes",
-        component: <Section title={"Get Inspired"}  backgroundColor={'#F7F5F2'}>
+          <HomeContent />
+        </Section>
+      ),
+    },
+    {
+      id: 5,
+      name: "Brand Selector",
+      component: <BrandSelector />,
+    },
+    {
+      id: 6,
+      name: "Recipes",
+      component: (
+        <Section title={"Get Inspired"} backgroundColor={"#F7F5F2"}>
           <HomeRecipes />
-        </Section>,
-        },
-    
+        </Section>
+      ),
+    },
 
-        {
-
-          id:7,
-          name: "Insights",
-          component: <SectionNoContainer title={"See the Latest Trends & Insights"}  backgroundColor={'#ffffff'}>
-            <FlexScroll />
-          </SectionNoContainer>,
-          },
-        {
-
-
-        id:7,
-        name: "Segments",
-        component: <Section title={"Discover the Possibilities for Your Operation"}  backgroundColor={'#F7F5F2'}>
+    {
+      id: 7,
+      name: "Insights",
+      component: (
+        <SectionNoContainer
+          title={"See the Latest Trends & Insights"}
+          backgroundColor={"#ffffff"}
+        >
+          <FlexScroll />
+        </SectionNoContainer>
+      ),
+    },
+    {
+      id: 7,
+      name: "Segments",
+      component: (
+        <Section
+          title={"Discover the Possibilities for Your Operation"}
+          backgroundColor={"#F7F5F2"}
+        >
           <SegmentCarousel />
-        </Section>,
-      },
+        </Section>
+      ),
+    },
+    {
+      id: 10,
+      name: "WhatsNext",
+      component: <WhatsNext />,
+    },
+    {
+      id: 11,
+      name: "EnlSignup",
+      component: <EnlSignup />,
+    },
 
-
-     
-     /* {
-        id: 6,
-        name: "Categories",
-        component: <Section title={"Categories"}><Categories /></Section>,
-      },
-      {
-        id: 7,
-        name: "Tags",
-        component: <Section title={"Tags"}><Tags /></Section>,
-      },
-      {
-        id: 8,
-        name: "Posts",
-        component: <Section title={"Posts"}><Posts /></Section>,
-      },
-     */ 
-    
-      {
-        id: 10,
-        name: "WhatsNext",
-        component: 
-          <WhatsNext />,
-      },
-      {
-        id: 11,
-        name: "EnlSignup",
-        component: <EnlSignup />,
-      },
-
-      {
-        id: 12,
-        name: "Footer",
-        component: <Footer />,
-      },
-    ]);
+    {
+      id: 12,
+      name: "Footer",
+      component: <Footer />,
+    },
+  ]);
   return (
     <>
       <PageMeta title={pageMeta.title} description={pageMeta.description} />
       {layout.map((section) => (
-        <React.Fragment key={section.id}>
-          {section.component}
-        </React.Fragment>
+        <React.Fragment key={section.id}>{section.component}</React.Fragment>
       ))}
-            <SubscribeModal />
-
+      <SubscribeModal />
     </>
   );
 }
@@ -140,19 +123,21 @@ const SegmentCarousel = () => {
     client: client,
   });
 
-  useEffect(() => {
-    if (data) {
-      console.log(data);
-    }
-  }, [data]);
-
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error</p>;
   return (
-    <ItemCarousel settings={{ dots: true,  arrows: false, infinite: true, speed: 500, slidesToShow: 3, slidesToScroll: 3 }}
+    <ItemCarousel
+      settings={{
+        dots: true,
+        arrows: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+      }}
       items={data.segments.nodes}
       title={"SegmentCarousel"}
       type={"segment"}
     />
   );
-}
+};
