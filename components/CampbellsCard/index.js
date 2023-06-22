@@ -18,7 +18,7 @@ export default function CampbellsCard({
     <Card
       key={key}
       className="shadow-sm"
-      style={{ width: "24rem" }}
+      style={{ margin: "1em" }}
       onClick={onClick}
     >
       <Link href={`/segments/${item.slug}`}>

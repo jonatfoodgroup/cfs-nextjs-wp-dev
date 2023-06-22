@@ -9,6 +9,13 @@
     color: var(--cfs-white);
 }
 
+.enlSignupCheckbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    font-size: 0.9rem;
+}
     input[type="text"].enlSignupInput {
         background-color: var(--cfs-white);
         color: var(--cfs-black);

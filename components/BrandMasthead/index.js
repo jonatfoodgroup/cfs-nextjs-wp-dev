@@ -60,13 +60,9 @@ const BrandMasthead = ({ slug }) => {
               <h2 class="centered head-underline">
                 {data.brand.brandFields.brandIntroHeadline}
               </h2>
-              <p>
-                WP CONTENT At Campbell’s Foodservice, we’re committed to serving
-                foods everyone can trust, like our fan-favorite Goldfish®
-                products. They’re fun, baked with goodness, and they’ve been
-                making everyone, including operators, smile for decades. Create
-                more memorable moments with Goldfish® crackers.
-              </p>
+          
+              <div dangerouslySetInnerHTML={{ __html: (data.brand.content) }}></div>
+            
             </Col>
 
             <Col>
