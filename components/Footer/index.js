@@ -150,19 +150,19 @@ const Footer = () => {
                   {/*replace with wp menu */}
                   <ul className={styles.legalMenu}>
                     <li>
-                      <a href="#">Allergen Labeling </a>
+                      <a href="https://www.campbellsoupcompany.com/about-us/faqs/#Allergens" target="_blank">Allergen Labeling </a>
                     </li>
                     <li>
-                      <a href="#">Privacy Policy</a>
+                      <a href="https://www.campbellsoupcompany.com/privacy-policy/" target="_blank">Privacy Policy</a>
                     </li>
                     <li>
-                      <a href="#">Interest Based Ads</a>
+                      <a href="https://www.campbellsoupcompany.com/privacy-policy/#advertising" target="_blank">Interest Based Ads</a>
                     </li>
                     <li>
-                      <a href="#">Legal Notices </a>
+                      <a href="https://www.campbellsoupcompany.com/terms-of-use/" target="_blank">Legal Notices </a>
                     </li>
                     <li>
-                      <a href="#">Do Not Sell My Personal Information</a>
+                      <a href="#" target="_blank">Do Not Sell My Personal Information</a>
                     </li>
                   </ul>
                 </Col>
