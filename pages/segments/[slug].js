@@ -87,7 +87,6 @@ export default function Segment({ segment }) {
   if (!segment) return <div>doesnt exist</div>;
   return (
     <>
-      <Header />
 
       <Container>
         <Row>
@@ -131,9 +130,6 @@ export default function Segment({ segment }) {
         </Row>
       </Container>
 
-      <WhatsNext />
-      <EnlSignup />
-      <Footer />
     </>
   );
 }
