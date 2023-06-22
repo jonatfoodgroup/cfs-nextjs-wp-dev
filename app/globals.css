@@ -120,6 +120,23 @@ a:hover {
   color: var(--cfs-accent);
 }
 
+/* reset active states from bootstrap */
+.btn-check:active+.btn-primary, .btn-check:checked+.btn-primary, .btn-primary.active, .btn-primary:active, .show>.btn-primary.dropdown-toggle { 
+  color: var(--cfs-white);
+  background-color: var(--cfs-black);
+  border-color: var(--cfs-red);
+}
+.btn-check:focus+.btn-primary, .btn-primary:focus {
+  color: #fff;
+  background-color:var(--cfs-accent);
+  border-color:var(--cfs-red);
+  box-shadow: 0 0 0 0.25rem rgba(255,0,0,0.3);
+}
+
+  .btn-check:focus+.btn, .btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(191,21,27,0.3);
+  }
 
 
 /* typography */
@@ -169,7 +186,21 @@ h4 {
 }
 
 /* buttons here! */
+.btn-link {
+    color: var(--cfs-black);
+    
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    margin-top: 16px;
 
+}
+.btn-link:hover {
+  color: var(--cfs-accent);
+}
+Header {
+  border-bottom: 10px solid var(--cfs-lightgray);
+}
 .btn-primary {
   border: 2px solid var(--cfs-red);
   border-radius: 0;
