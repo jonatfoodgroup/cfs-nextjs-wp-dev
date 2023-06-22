@@ -9,13 +9,14 @@
   /* pur a placeholder image here */
 
   background-image: url("https://via.placeholder.com/600x800");
-  background-size: cover;
+  background-size: 100%;
+  background-repeat: no-repeat;
   min-height: 80vh;
 }
 
 @media screen and (min-width: 768px) {
   .homeMasthead {
-  min-height: 500px;
+  min-height: 440px;
   background-image: url("https://campbellsf1dev.wpengine.com/wp-content/uploads/2023/06/fpo-masted.jpg");
   }
 
