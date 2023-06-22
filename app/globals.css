@@ -176,11 +176,41 @@ h4 {
   background-color: var(--cfs-white);
   color:var(--cfs-black);
   font-weight: 700;
+  font-size: 20px;
 }
 .btn-primary:hover {
   background-color: var(--cfs-accent);
   border: 2px solid var(--cfs-red);
 }
+/*
+.arrow a:link {
+  color: var(--cfs-red);
+  transition: all .2s ease-in;
+}*/
+.arrow::after {
+  content: " →";
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--cfs-gray);
+  position: relative;
+  display: inline-block;
+  right:-4px;
+  top:2px;
+  transition: all .2s ease-in;
+}
+
+.arrow:hover::after {
+  transform: translateX(4px);
+}
+
+/*
+.arrow a:hover {
+  color: var(--cfs-accent);
+}
+*/
+
+
+
  /* colors as classes */
  .red {
   color: var(--cfs-red);
@@ -213,6 +243,7 @@ h4 {
 .card-title a:hover {
   color: var(--cfs-accent);
 }
+
 /* SLICK */
 .slick-dots li.slick-active button:before {
   opacity: 1;

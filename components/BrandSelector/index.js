@@ -28,11 +28,11 @@ const BrandSelector = () => {
               Check out our complete portfolio of iconic brands
             </h4>
 
-            <Tabs defaultActiveKey="all" id="brands">
+           {/*} <Tabs defaultActiveKey="all" id="brands">
               <Tab eventKey="all" title="All"></Tab>
               <Tab eventKey="soups" title="Soups, Meals & Sauces"></Tab>
               <Tab eventKey="snacks" title="Snacks & Beverages"></Tab>
-            </Tabs>
+  </Tabs>*/}
           </Col>
         </Row>
       </Container>
@@ -56,12 +56,12 @@ const Brand = ({ brand, setBrand }) => {
     }
   }, [brand]);
   return (
-    <Col className={styles.w20}>
+    <Col  className={styles.w20}>
       <a onClick={(e) => {
         e.preventDefault();
         setBrand(brand);
       }}>
-        <img src={logoUrl} className="img-fluid" alt="{brand.title}" />
+        <img src={logoUrl} className={styles.BrandLogo} alt={brand.title} />
 
       </a>
     </Col>
@@ -78,19 +78,24 @@ const BrandModal = ({
   if (!brand) return null;
   return (
     <>
-      <Modal show={brand} onHide={() => setBrand(null)}>
-        <Modal.Header closeButton>
-          <Modal.Title>{brand.title}</Modal.Title>
-        </Modal.Header>
+      <Modal size="lg" show={brand} onHide={() => setBrand(null)}>
+        <Modal.Header closeButton className={styles.BrandModalHeader}></Modal.Header>
         <Modal.Body>
-          <img src={brand.featuredImage.node.guid} className="img-fluid" />
-          <p>{brand.excerpt}</p>
+          <Container className={styles.brandModal}>
+            <Row className="align-items-center">
+              <Col lg={6}><img src={brand.featuredImage.node.guid} className="img-fluid" /></Col>
+              <Col lg={6}> <h4>{brand.title}</h4>
+              <h2>{brand.brandFields.brandIntroHeadline}</h2>
+              <p> <div dangerouslySetInnerHTML={{ __html: (brand.excerpt) }}></div></p></Col>
+              </Row>
+          </Container>
+
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={() => setBrand(null)}>
+        <Modal.Footer className={styles.BrandModalFooter}>
+         {/*} <Button variant="secondary" onClick={() => setBrand(null)}>
             Close
           </Button>
-          <Button variant="primary" href={`/brands/${brand.slug}`}>
+          */}<Button variant="primary arrow" href={`/brands/${brand.slug}`}>
             Learn More
           </Button>
         </Modal.Footer>
