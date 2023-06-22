@@ -38,11 +38,6 @@ export default function Home() {
 
   const [layout, setLayout] = useState([
       {
-        id: 1,
-        name: "Header",
-        component: <Header />,
-      },
-      {
         id: 2,
         name: "Masthead",
         component: <Masthead />,
@@ -129,12 +124,13 @@ export default function Home() {
   return (
     <>
       <PageMeta title={pageMeta.title} description={pageMeta.description} />
-      <SubscribeModal />
       {layout.map((section) => (
         <React.Fragment key={section.id}>
           {section.component}
         </React.Fragment>
       ))}
+            <SubscribeModal />
+
     </>
   );
 }
