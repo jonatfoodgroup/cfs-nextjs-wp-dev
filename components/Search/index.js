@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import { Icon } from "@iconify/react";
-import styles from "./search.module.css";
+import styles from "./Search.module.css";
 import { 
   Row, Col, FormControl, InputGroup, Button,
 } from "react-bootstrap";
-
-const Search = ({ placeholder = "Type a phrase of keyword" }) => {
+import Link from "next/link";
+const Search = ({ placeholder = "Type a phrase or keyword" }) => {
   const [search, setSearch] = useState("");
   const [searchHistory, setSearchHistory] = useState([]); // [
   const [focus, setFocus] = useState(false);
@@ -16,7 +15,12 @@ const Search = ({ placeholder = "Type a phrase of keyword" }) => {
 
   const onPressEnter = (e) => {
     if (e.key === "Enter") {
+
     }
+  };
+
+  const onClickOutside = (e) => {
+    setFocus(false);
   };
 
   useEffect(() => {
@@ -34,18 +38,28 @@ const Search = ({ placeholder = "Type a phrase of keyword" }) => {
             onChange={(e) => setSearch(e.target.value)}
             onFocus={onFocus}
             onKeyDown={onPressEnter}
+            onBlur={onClickOutside}
           />
         </InputGroup>
         {focus && <MenuBox search={search} />}
       </form>
+     
     </>
   );
 };
 
 const Results = ({ search }) => {
-  const [type, setType] = useState(""); // ['sku', 'topic', 'inspiration'
-  // check if search is a 5 digit number
+  const [type, setType] = useState(""); 
+
+  // Fuzzy search that breakdown the typed string and compares it to the includes of each and if partial match, then return the type
+  const fuzzySearch = (search) => {
+    // Get the letters of the search string
+    const letters = search.split("");
+
+  };
+  
   useEffect(() => {
+    
     if (search.length === 5 && !isNaN(search)) {
       setType("SKU");
     } else if ((search.length >= 3) & search.includes("Tomato")) {
@@ -63,7 +77,11 @@ const Results = ({ search }) => {
   }, [search]);
   return (
     <>
-      
+      {/* Loading indicator */}
+      <p>Loading results ...</p>
+
+      {/* Results */}
+      {type}
     </>
   );
 };
@@ -75,7 +93,31 @@ const MenuBox = ({ search }) => {
         <>
           <Row>
             <Col>
-              <p>Inspiration</p>
+              <p>Inspiration & Ideas</p>
+              <hr />
+              <Row>
+                <Col>
+
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <p>Recently Searched</p>
+                  <ul>
+                    <li>Tomato</li>
+                    <li>Tomato Sauce</li>
+                    <li>Tomato Paste</li>
+                  </ul>
+                </Col>
+                <Col>
+                  <p>Recently Viewed</p>
+                  <ul>
+                    <li><Link href="/inspiration/recipes/12345">Tomato Sauce</Link></li>
+                    <li><Link href="/inspiration/recipes/12345">Tomato Paste</Link></li>
+                    <li><Link href="/inspiration/recipes/12345">Tomato</Link></li>
+                  </ul>
+                </Col>
+              </Row>
             </Col>
           </Row>
         </>
@@ -83,7 +125,7 @@ const MenuBox = ({ search }) => {
 
       {search.length >= 3 && (
         <>
-          <h2>Results for {search}</h2>
+          <p>Results for {search}</p>
           <Results search={search} />
         </>
       )}

@@ -1,9 +1,10 @@
 .menuBox {
   position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
+  top: 60;
+  right: 0;
   background-color: #fff;
+  width: 50vw !important;
+  max-width: 500px;
   border: 1px solid #ccc;
   border-top: none;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
