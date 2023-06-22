@@ -14,7 +14,7 @@ const Header = () => {
           <Col xs={12} md={2}>
             <CompanyLogo src="https://via.placeholder.com/200x60" alt="Company Logo" />
           </Col>
-          <Col xs={12} md={4}>
+          <Col xs={12} md={6} style={{ display: "flex", justifyContent: "center" }}>
             <NavMenu />
           </Col>
           <Col xs={12} md={3}>
@@ -22,8 +22,8 @@ const Header = () => {
           </Col>
           <Col>
             <ButtonGroup>
-              <TalkToAnExpert />
-              <LanguageSelector />
+              {/* <TalkToAnExpert /> */}
+              {/* <LanguageSelector /> */}
             </ButtonGroup>
           </Col>
         </Row>

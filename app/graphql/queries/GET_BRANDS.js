@@ -7,8 +7,10 @@ const GET_BRANDS = gql`
         id
         title
         slug
+        excerpt
         menuOrder 
         brandFields {
+          brandIntroHeadline
           fieldGroupName
           brandLogo {
             altText

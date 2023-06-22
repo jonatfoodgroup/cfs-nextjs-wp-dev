@@ -1,25 +1,26 @@
 import { useEffect, useState } from "react";
 import { Button, Modal, Container, Row, Col, Tabs, Tab } from "react-bootstrap";
+
 import { useQuery } from "@apollo/client";
 import client from "@/app/apollo-client";
 import GET_BRANDS from "@/app/graphql/queries/GET_BRANDS";
 import styles from "./BrandSelector.module.css";
+
+
 const BrandSelector = () => {
   const { loading, error, data } = useQuery(GET_BRANDS, {
     client: client,
   });
 
-  useEffect(() => {
-    if (data) {
-      console.log("brands", data);
-    }
-  }, [data]);
+  const [brand, setBrand] = useState(null);
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
   if (!data) return null;
   return (
     <>
+      <BrandModal brand={brand} setBrand={setBrand} />
       <Container>
         <Row>
           <Col>
@@ -27,11 +28,11 @@ const BrandSelector = () => {
               Check out our complete portfolio of iconic brands
             </h4>
 
-            <Tabs defaultActiveKey="all" id="brands">
+           {/*} <Tabs defaultActiveKey="all" id="brands">
               <Tab eventKey="all" title="All"></Tab>
               <Tab eventKey="soups" title="Soups, Meals & Sauces"></Tab>
               <Tab eventKey="snacks" title="Snacks & Beverages"></Tab>
-            </Tabs>
+  </Tabs>*/}
           </Col>
         </Row>
       </Container>
@@ -39,14 +40,14 @@ const BrandSelector = () => {
       <Container>
         <Row>
           {data.brands.nodes.length > 0 &&
-            data.brands.nodes.map((brand) => <Brand brand={brand} key={brand.id} />)}
+            data.brands.nodes.map((brand) => <Brand brand={brand} key={brand.id} setBrand={setBrand} />)}
         </Row>
       </Container>
     </>
   );
 };
 
-const Brand = ({ brand }) => {
+const Brand = ({ brand, setBrand }) => {
   const [logoUrl, setLogoUrl] = useState(brand.brandFields.brandLogo);
   
   useEffect(() => {
@@ -55,14 +56,12 @@ const Brand = ({ brand }) => {
     }
   }, [brand]);
   return (
-    <Col className={styles.w20}>
-      {/* <a href={`/brands/${brand.slug}`}>{brand.title}</a> */}
-      <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
-        {brand.title}
-
-        <img src={brand.featuredImage.node.guid} className="img-fluid" />
-
-        <img src={logoUrl} className="img-fluid" />
+    <Col  className={styles.w20}>
+      <a onClick={(e) => {
+        e.preventDefault();
+        setBrand(brand);
+      }}>
+        <img src={logoUrl} className={styles.BrandLogo} alt={brand.title} />
 
       </a>
     </Col>
@@ -70,3 +69,37 @@ const Brand = ({ brand }) => {
 };
 
 export default BrandSelector;
+
+
+const BrandModal = ({
+  brand,
+  setBrand
+}) => {
+  if (!brand) return null;
+  return (
+    <>
+      <Modal size="lg" show={brand} onHide={() => setBrand(null)}>
+        <Modal.Header closeButton className={styles.BrandModalHeader}></Modal.Header>
+        <Modal.Body>
+          <Container className={styles.brandModal}>
+            <Row className="align-items-center">
+              <Col lg={6}><img src={brand.featuredImage.node.guid} className="img-fluid" /></Col>
+              <Col lg={6}> <h4>{brand.title}</h4>
+              <h2>{brand.brandFields.brandIntroHeadline}</h2>
+              <p> <div dangerouslySetInnerHTML={{ __html: (brand.excerpt) }}></div></p></Col>
+              </Row>
+          </Container>
+
+        </Modal.Body>
+        <Modal.Footer className={styles.BrandModalFooter}>
+         {/*} <Button variant="secondary" onClick={() => setBrand(null)}>
+            Close
+          </Button>
+          */}<Button variant="primary arrow" href={`/brands/${brand.slug}`}>
+            Learn More
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  )
+}

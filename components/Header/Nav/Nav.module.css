@@ -9,7 +9,7 @@
 
 .popover {
   width: 100%;
-  max-width: 30vw !important;
+  max-width: 50vw !important;
 }
 
 @media all and (max-width: 767px) {
@@ -25,3 +25,4 @@
     max-width: 100%;
   }
 }
+

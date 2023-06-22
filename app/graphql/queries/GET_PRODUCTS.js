@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
-const GET_SEGMENTS = gql`
-  query GET_SEGMENTS {
-    segments(first:100) {
+const GET_PRODUCTS = gql`
+  query GET_PRODUCTS {
+    products {
       nodes {
         excerpt
         id
@@ -23,4 +23,4 @@ const GET_SEGMENTS = gql`
   }
 `
 
-export default GET_SEGMENTS;
+export default GET_PRODUCTS;
