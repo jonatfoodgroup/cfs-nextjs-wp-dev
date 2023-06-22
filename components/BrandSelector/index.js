@@ -12,17 +12,15 @@ const BrandSelector = () => {
     client: client,
   });
 
-  useEffect(() => {
-    if (data) {
-      console.log("brands", data);
-    }
-  }, [data]);
+  const [brand, setBrand] = useState(null);
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
   if (!data) return null;
   return (
     <>
+      <BrandModal brand={brand} setBrand={setBrand} />
       <Container>
         <Row>
           <Col>
@@ -42,14 +40,14 @@ const BrandSelector = () => {
       <Container>
         <Row>
           {data.brands.nodes.length > 0 &&
-            data.brands.nodes.map((brand) => <Brand brand={brand} key={brand.id} />)}
+            data.brands.nodes.map((brand) => <Brand brand={brand} key={brand.id} setBrand={setBrand} />)}
         </Row>
       </Container>
     </>
   );
 };
 
-const Brand = ({ brand }) => {
+const Brand = ({ brand, setBrand }) => {
   const [logoUrl, setLogoUrl] = useState(brand.brandFields.brandLogo);
   
   useEffect(() => {
@@ -59,11 +57,10 @@ const Brand = ({ brand }) => {
   }, [brand]);
   return (
     <Col className={styles.w20}>
-      {/* <a href={`/brands/${brand.slug}`}>{brand.title}</a> */}
-      <a href="#" data-toggle="modal">
-
-        {/*<img src={brand.featuredImage.node.guid} className="img-fluid" />*/}
-
+      <a onClick={(e) => {
+        e.preventDefault();
+        setBrand(brand);
+      }}>
         <img src={logoUrl} className="img-fluid" alt="{brand.title}" />
 
       </a>
@@ -74,27 +71,30 @@ const Brand = ({ brand }) => {
 export default BrandSelector;
 
 
-{/*each logo has to open a modal with the brand info: 
-brand excerpt
-brand featured image
-brand headline
-link to brand page
-*/}
-function BrandModal() {
-  const [modalShow, setModalShow] = React.useState(false);
-
+const BrandModal = ({
+  brand,
+  setBrand
+}) => {
+  if (!brand) return null;
   return (
     <>
-      <Button variant="primary" onClick={() => setModalShow(true)}>
-        Launch vertically centered modal
-      </Button>
-
-      <MyVerticallyCenteredModal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      />
+      <Modal show={brand} onHide={() => setBrand(null)}>
+        <Modal.Header closeButton>
+          <Modal.Title>{brand.title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <img src={brand.featuredImage.node.guid} className="img-fluid" />
+          <p>{brand.excerpt}</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setBrand(null)}>
+            Close
+          </Button>
+          <Button variant="primary" href={`/brands/${brand.slug}`}>
+            Learn More
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
-  );
+  )
 }
-
-render(<BrandModal />);
