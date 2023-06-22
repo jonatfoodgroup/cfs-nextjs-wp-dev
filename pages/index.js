@@ -83,22 +83,6 @@ export default function Home() {
         </Section>
       ),
     },
-    {
-      id: 10,
-      name: "WhatsNext",
-      component: <WhatsNext />,
-    },
-    {
-      id: 11,
-      name: "EnlSignup",
-      component: <EnlSignup />,
-    },
-
-    {
-      id: 12,
-      name: "Footer",
-      component: <Footer />,
-    },
   ]);
   return (
     <>
