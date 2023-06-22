@@ -87,7 +87,7 @@ const Footer = () => {
             <Container>
               <Row>
                 <Col xs={{ span:12, order: 'last' }} md={{ span:3, order: 'first' }}>
-                  <div className={styles.copyRightBlock}>©(DATE) Campbell’s Soup Company. <br />All rights reserved.</div>
+                  <div className={styles.copyRightBlock}>©{new Date().getFullYear()} Campbell’s Soup Company. <br />All rights reserved.</div>
                 </Col>
                 <Col xs={12} md={{ span:9 }}>
                   {/*replace with wp menu */}
