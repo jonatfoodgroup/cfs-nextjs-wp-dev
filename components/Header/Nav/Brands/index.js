@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/client";
 import client from "@/app/apollo-client";
 import { Row, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const BrandsMenu = () => {
   const { loading, error, data } = useQuery(GET_BRANDS, {
@@ -12,7 +13,7 @@ const BrandsMenu = () => {
     {
       title: "Soup, Meals & Sauces",
       slug: "soups",
-      component: <BrandLogoGrid slug="soups"  />,
+      component: <BrandLogoGrid slug="soups" />,
     },
     {
       title: "Snacks & Beverage",
@@ -27,7 +28,7 @@ const BrandsMenu = () => {
   return (
     <>
       <Row>
-        <Col>
+        <Col xs={12} md={4}>
           {tabs.map((tab, index) => {
             return (
               <li key={index} onClick={() => setSelectedTab(tab.slug)}>
@@ -37,11 +38,15 @@ const BrandsMenu = () => {
           })}
         </Col>
         <Col>
-          {tabs.map((tab, index) => {
-            if (tab.slug === selectedTab) {
-              return tab.component;
-            }
-          })}
+          <Row>
+            {data?.brands?.nodes?.map((brand, index) => {
+              return (
+                <Col key={index} xs={12} md={4}>
+                  <BrandLogo brand={brand} />
+                </Col>
+              );
+            })}
+          </Row>
         </Col>
       </Row>
     </>
@@ -49,19 +54,7 @@ const BrandsMenu = () => {
 };
 
 const BrandLogoGrid = ({ slug, brands }) => {
-
-  return (
-    <>
-      {brands &&
-        brands.nodes.map((brand, index) => {
-          return (
-            <div key={index}>
-             <BrandLogo brand={brand} />
-            </div>
-          );
-        })}
-    </>
-  );
+  return <></>;
 };
 
 const BrandLogo = ({ brand }) => {
@@ -73,17 +66,12 @@ const BrandLogo = ({ brand }) => {
   }, [brand]);
 
   return (
-    <>
-      {logo && (
-        <img
-          src={logo}
-          width={200}
-          height={60}
-          />
-      )}
-    </>
+    <Link 
+      href={`/brands/${brand.slug}`}
+      as={`/brands/${brand.slug}`}
+      >
+    {logo && <img src={logo} width={160} />}</Link>
   );
 };
-
 
 export default BrandsMenu;
