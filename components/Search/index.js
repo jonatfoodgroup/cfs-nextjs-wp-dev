@@ -5,7 +5,7 @@ import {
   Row, Col, FormControl, InputGroup, Button,
 } from "react-bootstrap";
 
-const Search = ({ placeholder = "Type a phrase of keyword" }) => {
+const Search = ({ placeholder = "Type a phrase or keyword" }) => {
   const [search, setSearch] = useState("");
   const [searchHistory, setSearchHistory] = useState([]); // [
   const [focus, setFocus] = useState(false);
