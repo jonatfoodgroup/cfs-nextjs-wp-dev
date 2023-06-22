@@ -94,7 +94,6 @@ export default function Segment({ segment }) {
           <Col md={{ span: 6 }} className={"mt-5"}>
             {/*post content from wordpress*/}
             <div dangerouslySetInnerHTML={{ __html: segment.content }}></div>
-            #create a button with a contact us link:
             <Button variant="primary" size="lg" className="btn btn-primary">
               Connect with an expert
             </Button>
