@@ -13,6 +13,7 @@ import Masthead from "@/components/Masthead";
 import PageMeta from "@/components/PageMeta";
 import { Container, Row, Col } from "react-bootstrap";
 import Section from "@/components/Section";
+import SectionNoContainer from "@/components/Section/SectionNoContainer";
 import BrandSelector from "@/components/BrandSelector";
 import SubscribeModal from "@/components/Modals/Subscribe";
 import LayoutEditor from "@/components/Drawers/LayoutEditor";
@@ -27,7 +28,7 @@ import GET_PAGES from "@/app/graphql/queries/GET_PAGES";
 import GET_HOME from "@/app/graphql/queries/GET_HOME";
 import { Content } from "next/font/google";
 import HomeInsights from "@/components/HomeInsights";
-
+import FlexScroll from "@/components/Carousels/FlexScroll";
 
 export default function Home() {
   const pageMeta = {
@@ -74,9 +75,9 @@ export default function Home() {
 
           id:7,
           name: "Insights",
-          component: <Section title={"See the Latest Trends & Insights"}  backgroundColor={'#ffffff'}>
-            <HomeInsights />
-          </Section>,
+          component: <SectionNoContainer title={"See the Latest Trends & Insights"}  backgroundColor={'#ffffff'}>
+            <FlexScroll />
+          </SectionNoContainer>,
           },
         {
 

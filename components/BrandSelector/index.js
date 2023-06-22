@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button, Modal, Container, Row, Col, Tabs, Tab } from "react-bootstrap";
+
 import { useQuery } from "@apollo/client";
 import client from "@/app/apollo-client";
 import GET_BRANDS from "@/app/graphql/queries/GET_BRANDS";
@@ -59,12 +60,11 @@ const Brand = ({ brand }) => {
   return (
     <Col className={styles.w20}>
       {/* <a href={`/brands/${brand.slug}`}>{brand.title}</a> */}
-      <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
-        {brand.title}
+      <a href="#" data-toggle="modal">
 
-        <img src={brand.featuredImage.node.guid} className="img-fluid" />
+        {/*<img src={brand.featuredImage.node.guid} className="img-fluid" />*/}
 
-        <img src={logoUrl} className="img-fluid" />
+        <img src={logoUrl} className="img-fluid" alt="{brand.title}" />
 
       </a>
     </Col>
