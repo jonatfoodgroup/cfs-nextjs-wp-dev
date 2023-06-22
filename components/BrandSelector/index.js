@@ -72,3 +72,29 @@ const Brand = ({ brand }) => {
 };
 
 export default BrandSelector;
+
+
+{/*each logo has to open a modal with the brand info: 
+brand excerpt
+brand featured image
+brand headline
+link to brand page
+*/}
+function BrandModal() {
+  const [modalShow, setModalShow] = React.useState(false);
+
+  return (
+    <>
+      <Button variant="primary" onClick={() => setModalShow(true)}>
+        Launch vertically centered modal
+      </Button>
+
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
+    </>
+  );
+}
+
+render(<BrandModal />);
