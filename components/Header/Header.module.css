@@ -4,8 +4,12 @@
     align-items: center;
     padding: 20px 40px;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    border: 0;
+    border-bottom: 10px solid transparent;
+    border-image: linear-gradient(to right, #A7A9AC, var(--cfs-lightgray)) 1;
+    position: relative;
+    z-index: 9999;/*keep header overlapped for brands page iamges */
+    }
 
 @media all and (max-width: 767px) {
     .header {

@@ -198,9 +198,7 @@ h4 {
 .btn-link:hover {
   color: var(--cfs-accent);
 }
-Header {
-  border-bottom: 10px solid var(--cfs-lightgray);
-}
+
 .btn-primary {
   border: 2px solid var(--cfs-red);
   border-radius: 0;

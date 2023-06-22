@@ -2,9 +2,14 @@
   width: 100%;
 }
 
+
+
 .navItem {
   display: inline-block !important;
   width: auto;
+}
+.navItem::after {
+ 
 }
 
 .popover {
