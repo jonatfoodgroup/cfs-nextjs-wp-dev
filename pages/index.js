@@ -8,15 +8,12 @@ import "../app/globals.css";
 // Global modules
 import WhatsNext from "@/components/WhatsNext";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import Masthead from "@/components/Masthead";
 import PageMeta from "@/components/PageMeta";
-import { Container, Row, Col } from "react-bootstrap";
 import Section from "@/components/Section";
 import SectionNoContainer from "@/components/Section/SectionNoContainer";
 import BrandSelector from "@/components/BrandSelector";
 import SubscribeModal from "@/components/Modals/Subscribe";
-import LayoutEditor from "@/components/Drawers/LayoutEditor";
 import ItemCarousel from "@/components/Carousels/ItemCarousel";
 import EnlSignup from "@/components/EnlSignup";
 import HomeRecipes from "@/components/HomeRecipes";
@@ -24,10 +21,6 @@ import HomeContent from "@/components/HomeContent";
 import { useQuery } from "@apollo/client";
 import client from "@/app/apollo-client";
 import GET_SEGMENTS from "@/app/graphql/queries/GET_SEGMENTS";
-import GET_PAGES from "@/app/graphql/queries/GET_PAGES";
-import GET_HOME from "@/app/graphql/queries/GET_HOME";
-import { Content } from "next/font/google";
-import HomeInsights from "@/components/HomeInsights";
 import FlexScroll from "@/components/Carousels/FlexScroll";
 
 export default function Home() {
