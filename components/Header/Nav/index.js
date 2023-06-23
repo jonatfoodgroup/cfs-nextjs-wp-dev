@@ -41,7 +41,7 @@ const NavMenu = () => {
       {items.map((item) => (
         <li key={item.id} className={styles.navItem}>
           <OverlayTrigger
-            trigger="hover"
+            trigger="click"
             placement="bottom"
             overlay={
               <Popover id="popover-positioned-bottom" className={styles.popover}>
