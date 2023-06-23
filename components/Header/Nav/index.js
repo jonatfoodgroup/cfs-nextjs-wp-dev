@@ -5,6 +5,7 @@ import BrandsMenu from "./Brands";
 import SegmentsMenu from "./Segments";
 import ProductsMenu from "./Products";
 import InspirationMenu from "./Inspiration";
+import Link from "next/link";
 
 const items = [
   {
@@ -40,7 +41,7 @@ const NavMenu = () => {
       {items.map((item) => (
         <li key={item.id} className={styles.navItem}>
           <OverlayTrigger
-            trigger="click"
+            trigger="hover"
             placement="bottom"
             overlay={
               <Popover id="popover-positioned-bottom" className={styles.popover}>
@@ -59,7 +60,9 @@ const NavMenu = () => {
               }
             }}
           >
-            <Button variant="link" className={styles.link}>{item.name}</Button>
+            <Button variant="link" href={item.url}>
+              {item.name}
+            </Button>
           </OverlayTrigger>
         </li>
       ))}

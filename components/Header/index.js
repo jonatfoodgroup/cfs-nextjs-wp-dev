@@ -14,7 +14,7 @@ const Header = () => {
           <Col xs={12} md={1}>
             <CompanyLogo src="https://via.placeholder.com/200x60" alt="Company Logo" />
           </Col>
-          <Col xs={12} md={5} style={{ 
+          <Col xs={12} md={6} style={{ 
             display: "flex", 
             justifyContent: "space-between",
             alignItems: "center"
