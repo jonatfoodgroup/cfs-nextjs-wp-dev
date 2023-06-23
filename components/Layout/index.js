@@ -6,6 +6,7 @@ import EnlSignup from "@/components/EnlSignup";
 import WhatsNext from "@/components/WhatsNext";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Head from "next/head";
 
 export default function Layout({ children }) {
   useEffect(() => {
@@ -16,6 +17,9 @@ export default function Layout({ children }) {
   }, []);
   return (
     <>
+      <Head>
+      <link rel="stylesheet" href="https://use.typekit.net/cjd3qpj.css" />
+      </Head>
       <Header />
       {children}
       <WhatsNext />
