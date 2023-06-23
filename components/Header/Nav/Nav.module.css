@@ -1,16 +1,21 @@
 .nav {
   width: 100%;
+  margin: 0px;
 }
-
-
 
 .navItem {
   display: inline-block !important;
   width: auto;
+  margin: 0px;
+
 }
-.navItem::after {
- 
+
+.link {
+  font-size: .9rem !important;
+  margin: 0px !important;
 }
+
+.navItem::after {}
 
 .popover {
   width: 100%;
@@ -30,4 +35,3 @@
     max-width: 100%;
   }
 }
-

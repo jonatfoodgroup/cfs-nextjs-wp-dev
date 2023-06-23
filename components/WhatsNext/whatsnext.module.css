@@ -41,6 +41,13 @@
 
 }
 .whatsNextIcon {
-  padding: 1em 10px 1em 0;
+  padding: 1em 16px 1em 0;
 }
 
+.linkRed {
+  color: var(--cfs-red) !important;
+  margin-top: 4px !important;
+  text-decoration: underline !important;
+  font-weight: bold;
+  display: block;
+}

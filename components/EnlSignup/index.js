@@ -11,7 +11,7 @@ const EnlSignup = () => {
         <Col md={1}></Col>
         <Col md={5}>
           <h2>Sign up for our newsletter</h2>
-          <p>Get the latest news and updates from Campbell's Foodserice.</p>
+          <p>Get the latest news and updates from Campbell&apos;s Foodservice.</p>
           <div className="enl-signup-form">
             <form>
               <input
@@ -25,22 +25,6 @@ const EnlSignup = () => {
                 disabled={!checked}
                 className={styles.enlSignupSubmit}
               />
-              {/* Checkbox for marketing activities */}
-              <div className={styles.enlSignupCheckbox}>
-              <label for="marketing">
-                <input
-                  type="checkbox"
-                  id="marketing"
-                  name="marketing"
-                  value="marketing"
-                  checked={checked}
-                  onChange={() => setChecked(!checked)}
-                />
-                
-                  I would like to receive marketing communications from
-                  Campbell's Foodservice.
-                </label>
-              </div>
             </form>
           </div>
         </Col>

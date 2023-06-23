@@ -13,7 +13,7 @@ export default function MyApp({ Component, pageProps }) {
   }, []);
   return (
     <>
-      <LayoutEditor />
+      {/* <LayoutEditor /> */}
       <Layout>
         <Component {...pageProps} />
       </Layout>

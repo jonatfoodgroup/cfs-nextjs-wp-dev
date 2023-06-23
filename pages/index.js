@@ -81,15 +81,30 @@ export default function Home() {
       {layout.map((section) => (
         <React.Fragment key={section.id}>{section.component}</React.Fragment>
       ))}
-      <SubscribeModal />
     </>
   );
 }
 
 const SegmentCarousel = () => {
+  const [segments, setSegments] = useState([]);
   const { loading, error, data } = useQuery(GET_SEGMENTS, {
     client: client,
   });
+
+  useEffect(() => {
+    if (data) {
+      if (data.segments.nodes.length > 0) {
+        setSegments(data.segments.nodes);
+
+        // order by title
+        setSegments(
+          segments.sort((a, b) => {
+            return a.title.localeCompare(b.title);
+          })
+        );
+      }
+    }
+  }, [data]);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error</p>;

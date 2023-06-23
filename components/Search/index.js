@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "./Search.module.css";
-import { 
-  Row, Col, FormControl, InputGroup, Button,
-} from "react-bootstrap";
+import { Row, Col, FormControl, InputGroup, Button } from "react-bootstrap";
 import Link from "next/link";
 const Search = ({ placeholder = "Type a phrase or keyword" }) => {
   const [search, setSearch] = useState("");
@@ -15,7 +13,6 @@ const Search = ({ placeholder = "Type a phrase or keyword" }) => {
 
   const onPressEnter = (e) => {
     if (e.key === "Enter") {
-
     }
   };
 
@@ -32,6 +29,7 @@ const Search = ({ placeholder = "Type a phrase or keyword" }) => {
       <form className={styles.searchBox} onSubmit={(e) => e.preventDefault()}>
         <InputGroup>
           <FormControl
+          className={styles.searchInput}
             type="text"
             placeholder={placeholder}
             value={search}
@@ -43,23 +41,20 @@ const Search = ({ placeholder = "Type a phrase or keyword" }) => {
         </InputGroup>
         {focus && <MenuBox search={search} />}
       </form>
-     
     </>
   );
 };
 
 const Results = ({ search }) => {
-  const [type, setType] = useState(""); 
+  const [type, setType] = useState("");
 
   // Fuzzy search that breakdown the typed string and compares it to the includes of each and if partial match, then return the type
   const fuzzySearch = (search) => {
     // Get the letters of the search string
     const letters = search.split("");
-
   };
-  
+
   useEffect(() => {
-    
     if (search.length === 5 && !isNaN(search)) {
       setType("SKU");
     } else if ((search.length >= 3) & search.includes("Tomato")) {
@@ -96,9 +91,7 @@ const MenuBox = ({ search }) => {
               <p>Inspiration & Ideas</p>
               <hr />
               <Row>
-                <Col>
-
-                </Col>
+                <Col></Col>
               </Row>
               <Row>
                 <Col>
@@ -112,9 +105,19 @@ const MenuBox = ({ search }) => {
                 <Col>
                   <p>Recently Viewed</p>
                   <ul>
-                    <li><Link href="/inspiration/recipes/12345">Tomato Sauce</Link></li>
-                    <li><Link href="/inspiration/recipes/12345">Tomato Paste</Link></li>
-                    <li><Link href="/inspiration/recipes/12345">Tomato</Link></li>
+                    <li>
+                      <Link href="/inspiration/recipes/12345">
+                        Tomato Sauce
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/inspiration/recipes/12345">
+                        Tomato Paste
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/inspiration/recipes/12345">Tomato</Link>
+                    </li>
                   </ul>
                 </Col>
               </Row>

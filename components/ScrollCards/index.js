@@ -1,6 +1,5 @@
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import "react-horizontal-scrolling-menu/dist/styles.css";
-import { ScrollMenu } from "react-horizontal-scrolling-menu";
 
 let exampleItems = [
   {

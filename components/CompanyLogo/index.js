@@ -26,7 +26,7 @@ const CompanyLogo = ({ src, alt }) => {
   return (
     <>
       <Link href="/">
-        <img src={logo} alt={logoAlt} />
+        <img src={logo} alt={logoAlt} style={{maxWidth: '130px'}} />
       </Link>
     </>
   )

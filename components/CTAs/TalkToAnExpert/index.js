@@ -19,7 +19,7 @@ const TalkToAnExpert = () => {
           </Popover>
         }
       >
-        <Button variant="primary" onClick={() => setShow(!show)}>
+        <Button variant="link" onClick={() => setShow(!show)} style={{fontSize: '.8rem', color: '#B80720'}}>
           Talk to an expert
         </Button>
       </OverlayTrigger>

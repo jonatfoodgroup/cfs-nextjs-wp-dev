@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../app/globals.css";
+import PageMeta from "@/components/PageMeta";
 
 // Get the tag by slug from the wordpress graphql api
 export async function getStaticProps({ params }) {
@@ -65,9 +66,10 @@ export function Subsegment({ headline, sectionCopy }) {
   return (
     <>
       <Col>
-        loop through subsegment content from an ACF field?
+      <div style={{padding: 20}}>
         <h4>{headline}</h4>
         <p>{sectionCopy}</p>
+        </div>
       </Col>
     </>
   );
@@ -81,11 +83,10 @@ export default function Segment({ segment }) {
   if (!segment) return <div>doesnt exist</div>;
   return (
     <>
-
+      <PageMeta title={segment.title} description={segment.excerpt} />
       <Container>
         <Row>
           <Col md={{ span: 6 }} className={"mt-5"}>
-            {/*post content from wordpress*/}
             <div dangerouslySetInnerHTML={{ __html: segment.content }}></div>
             <Button variant="primary" size="lg" className="btn btn-primary">
               Connect with an expert
@@ -101,7 +102,7 @@ export default function Segment({ segment }) {
           </Col>
         </Row>
 
-        <Row xs={12} md={3}>
+        <Row xs={12} md={3} style={{marginTop: '3rem'}}>
           <Subsegment
             headline={"Subsegment"}
             sectionCopy={

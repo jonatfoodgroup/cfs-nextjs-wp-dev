@@ -27,12 +27,18 @@ const BrandSelector = () => {
             <h4 class="centered">
               Check out our complete portfolio of iconic brands
             </h4>
+            <Row>
+              <Col style={{textAlign: "center"}}>
+              <Button variant="primary" href="/brands">
+              Soups, Meals &amp; Sides
+            </Button>
+              <Button variant="primary" href="/brands">
+              Snacks & Beverages
+            </Button>
+              </Col>
+            </Row>
+            
 
-           {/*} <Tabs defaultActiveKey="all" id="brands">
-              <Tab eventKey="all" title="All"></Tab>
-              <Tab eventKey="soups" title="Soups, Meals & Sauces"></Tab>
-              <Tab eventKey="snacks" title="Snacks & Beverages"></Tab>
-  </Tabs>*/}
           </Col>
         </Row>
       </Container>

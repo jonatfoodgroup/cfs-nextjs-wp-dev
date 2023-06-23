@@ -10,20 +10,24 @@ const Header = () => {
   return (
     <header data-aos="fade-down" data-aos-duration="750" data-aos-once="true" className={styles.header}>
       <Container>
-        <Row>
-          <Col xs={12} md={2}>
+        <Row className="align-items-center">
+          <Col xs={12} md={1}>
             <CompanyLogo src="https://via.placeholder.com/200x60" alt="Company Logo" />
           </Col>
-          <Col xs={12} md={6} style={{ display: "flex", justifyContent: "center" }}>
+          <Col xs={12} md={5} style={{ 
+            display: "flex", 
+            justifyContent: "space-between",
+            alignItems: "center"
+          }} className="text-center">
             <NavMenu />
           </Col>
           <Col xs={12} md={3}>
             <Search />
           </Col>
-          <Col>
+          <Col className="text-end">
             <ButtonGroup>
-              {/* <TalkToAnExpert /> */}
-              {/* <LanguageSelector /> */}
+              <TalkToAnExpert />
+              <LanguageSelector />
             </ButtonGroup>
           </Col>
         </Row>
