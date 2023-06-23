@@ -1,11 +1,10 @@
-import { useState} from "react";
+import { useState, useContext} from "react";
 import { Button, Popover, OverlayTrigger } from "react-bootstrap";
 import styles from "./Nav.module.css";
 import BrandsMenu from "./Brands";
 import SegmentsMenu from "./Segments";
 import ProductsMenu from "./Products";
 import InspirationMenu from "./Inspiration";
-import Link from "next/link";
 
 const items = [
   {
@@ -36,6 +35,7 @@ const items = [
 
 const NavMenu = () => {
   const [selected, setSelected] = useState(null);
+
   return (
     <ul className={styles.nav}>
       {items.map((item) => (
@@ -47,6 +47,7 @@ const NavMenu = () => {
               <Popover id="popover-positioned-bottom" className={styles.popover}>
                 <Popover.Header as="h3">{item.name}</Popover.Header>
                 <Popover.Body>
+                  {/* Render the component and attached the setSelected function */}
                   {item.component}
                 </Popover.Body>
               </Popover>

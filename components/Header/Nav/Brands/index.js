@@ -5,7 +5,8 @@ import { Row, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-const BrandsMenu = () => {
+const BrandsMenu = (props) => {
+  console.log('propps',props);
   const { loading, error, data } = useQuery(GET_BRANDS, {
     client: client,
   });

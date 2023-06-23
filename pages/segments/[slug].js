@@ -76,20 +76,16 @@ export async function getStaticPaths() {
 export function Subsegment({ headline, sectionCopy }) {
   return (
     <>
-      <Col>
+      
         <div style={{ padding: 20 }}>
           <h3 className="text--red">{headline}</h3>
           <p>{sectionCopy}</p>
         </div>
-      </Col>
     </>
   );
 }
 
 export default function Segment({ segment }) {
-  useEffect(() => {
-    console.log(segment);
-  }, [segment]);
 
   if (!segment) return <div>doesnt exist</div>;
   return (
@@ -119,11 +115,12 @@ export default function Segment({ segment }) {
           {segment.segmentFields.subsegment &&
             segment.segmentFields.subsegment.map((subsegment) => {
               return (
+                <Col key={subsegment.title}>
                 <Subsegment
                   headline={subsegment.title}
                   sectionCopy={subsegment.description}
-                  key={subsegment.title}
                 />
+                </Col>
               );
             })}
         </Row>
