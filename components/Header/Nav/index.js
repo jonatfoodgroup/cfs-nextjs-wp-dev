@@ -60,7 +60,7 @@ const NavMenu = () => {
               }
             }}
           >
-            <Button variant="link" href={item.url}>
+            <Button variant="link">
               {item.name}
             </Button>
           </OverlayTrigger>
