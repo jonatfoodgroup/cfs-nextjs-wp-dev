@@ -32,7 +32,13 @@ export async function getStaticProps({ params }) {
               description
               title
             }
+            pointsOfDifference {
+              title
+              content
+            }
           }
+          
+
         }
       }
     `,
@@ -122,24 +128,6 @@ export default function Segment({ segment }) {
               );
             })
           }
-          <Subsegment
-            headline={"Subsegment"}
-            sectionCopy={
-              "Curabitur suspendisse quisque ornare torquent parturient convallis fringilla ullamcorper curabitur odio porttitor augue suscipit adipiscing vestibulum vestibulum ullamcorper fermentum sem at est placerat diam per sociis."
-            }
-          />
-          <Subsegment
-            headline={"Subsegment"}
-            sectionCopy={
-              "Curabitur suspendisse quisque ornare torquent parturient convallis fringilla ullamcorper curabitur odio porttitor augue suscipit adipiscing vestibulum vestibulum ullamcorper fermentum sem at est placerat diam per sociis."
-            }
-          />
-          <Subsegment
-            headline={"Subsegment"}
-            sectionCopy={
-              "Curabitur suspendisse quisque ornare torquent parturient convallis fringilla ullamcorper curabitur odio porttitor augue suscipit adipiscing vestibulum vestibulum ullamcorper fermentum sem at est placerat diam per sociis."
-            }
-          />
         </Row>
 
         <PointsofDifference segment={segment} />
@@ -151,17 +139,28 @@ export default function Segment({ segment }) {
 
 // A 2 column layout with buttons on the left, and tab panels on the right for each point of difference
 const PointsofDifference = ({segment}) => {
-  const [tabs, setTabs] = useState([])
+  useEffect(() => {
+    console.log(segment);
+  }, [segment]);
+  if (!segment.segmentFields.pointsOfDifference) return null
   return (
     <>
-      <Row>
-        <Col md={{ span: 6 }} className={"mt-5"}>
-          <h3>Snacking Made Easy</h3>
-        </Col>
-        <Col md={{ span: 6 }} className={"mt-5"}>
-          <p style={{fontSize: '1.2rem'}}>Drive profits with our top snacking brand brands, including Snyder’s of Hanover® flavored pretzels, Kettle Brand® or Cape Cod® kettle-cooked potato chips, Late July® tortilla chips or Lance® peanut butter sandwich crackers.</p>
-        </Col>
-      </Row>
+      {
+        segment.segmentFields.pointsOfDifference &&
+        segment.segmentFields.pointsOfDifference.map((pod) => {
+          return (
+            <Row className="mt-5" key={pod.title}>
+              <Col md={{ span: 6 }}>
+                <h4>{pod.title}</h4>
+                
+              </Col>
+              <Col md={{ span: 6 }}>
+                <div dangerouslySetInnerHTML={{ __html: pod.content }}></div>
+              </Col>
+            </Row>
+          );
+        })
+      }
     </>
   )
 }
