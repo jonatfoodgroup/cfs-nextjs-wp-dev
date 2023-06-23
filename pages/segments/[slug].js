@@ -76,17 +76,15 @@ export async function getStaticPaths() {
 export function Subsegment({ headline, sectionCopy }) {
   return (
     <>
-      
-        <div style={{ padding: 20 }}>
-          <h3 className="text--red">{headline}</h3>
-          <p>{sectionCopy}</p>
-        </div>
+      <div style={{ padding: 20 }}>
+        <h3 className="text--red">{headline}</h3>
+        <p>{sectionCopy}</p>
+      </div>
     </>
   );
 }
 
 export default function Segment({ segment }) {
-
   if (!segment) return <div>doesnt exist</div>;
   return (
     <>
@@ -116,16 +114,14 @@ export default function Segment({ segment }) {
             segment.segmentFields.subsegment.map((subsegment) => {
               return (
                 <Col key={subsegment.title}>
-                <Subsegment
-                  headline={subsegment.title}
-                  sectionCopy={subsegment.description}
-                />
+                  <Subsegment
+                    headline={subsegment.title}
+                    sectionCopy={subsegment.description}
+                  />
                 </Col>
               );
             })}
         </Row>
-
-        
       </Container>
     </>
   );
@@ -141,7 +137,7 @@ const PointsofDifference = ({ segment }) => {
           return (
             <Row className="mt-5" key={pod.title}>
               <Col md={{ span: 6 }}>
-                <h4>{pod.title}</h4>
+                <h4 className="text--red">{pod.title}</h4>
               </Col>
               <Col md={{ span: 6 }}>
                 <div dangerouslySetInnerHTML={{ __html: pod.content }}></div>
