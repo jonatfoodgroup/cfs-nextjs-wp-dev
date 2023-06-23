@@ -28,15 +28,6 @@ const BrandsMenu = () => {
   return (
     <>
       <Row>
-        <Col xs={12} md={4}>
-          {tabs.map((tab, index) => {
-            return (
-              <li key={index} onClick={() => setSelectedTab(tab.slug)}>
-                {tab.title}
-              </li>
-            );
-          })}
-        </Col>
         <Col>
           <Row>
             {data?.brands?.nodes?.map((brand, index) => {

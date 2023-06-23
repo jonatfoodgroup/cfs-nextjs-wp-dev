@@ -58,7 +58,7 @@ const WhatsNext = () => {
               "https://campbellsf1dev.wpengine.com/wp-content/uploads/2023/06/icon-bubble.png"
             }
             alttext={"some alt text"}
-            sectionCopy={"Speak with a Campbell’s sales represntative."}
+            sectionCopy={"Speak with a Campbell’s sales representative."}
             linkCopy={"Contact Us"}
           />
         </Col>
@@ -70,7 +70,7 @@ const WhatsNext = () => {
               "https://campbellsf1dev.wpengine.com/wp-content/uploads/2023/06/icon-bulb.png"
             }
             alttext={"some alt text"}
-            sectionCopy={"View the latest busines trends and insights."}
+            sectionCopy={"View the latest business trends and insights."}
             linkCopy={"Get Inspired"}
           />
         </Col>
