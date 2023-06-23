@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 import client from "../../app/apollo-client";
-import { useEffect } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Container, Row, Col, Button, Tabs } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../app/globals.css";
 import PageMeta from "@/components/PageMeta";
@@ -24,6 +24,13 @@ export async function getStaticProps({ params }) {
               description
               altText
               uri
+            }
+          }
+          segmentFields {
+            fieldGroupName
+            subsegment {
+              description
+              title
             }
           }
         }
@@ -103,6 +110,18 @@ export default function Segment({ segment }) {
         </Row>
 
         <Row xs={12} md={3} style={{marginTop: '3rem'}}>
+          {
+            segment.segmentFields.subsegment &&
+            segment.segmentFields.subsegment.map((subsegment) => {
+              return (
+                <Subsegment
+                  headline={subsegment.title}
+                  sectionCopy={subsegment.description}
+                  key={subsegment.title}
+                />
+              );
+            })
+          }
           <Subsegment
             headline={"Subsegment"}
             sectionCopy={
@@ -122,8 +141,27 @@ export default function Segment({ segment }) {
             }
           />
         </Row>
+
+        <PointsofDifference segment={segment} />
       </Container>
 
     </>
   );
+}
+
+// A 2 column layout with buttons on the left, and tab panels on the right for each point of difference
+const PointsofDifference = ({segment}) => {
+  const [tabs, setTabs] = useState([])
+  return (
+    <>
+      <Row>
+        <Col md={{ span: 6 }} className={"mt-5"}>
+          <h3>Snacking Made Easy</h3>
+        </Col>
+        <Col md={{ span: 6 }} className={"mt-5"}>
+          <p style={{fontSize: '1.2rem'}}>Drive profits with our top snacking brand brands, including Snyder’s of Hanover® flavored pretzels, Kettle Brand® or Cape Cod® kettle-cooked potato chips, Late July® tortilla chips or Lance® peanut butter sandwich crackers.</p>
+        </Col>
+      </Row>
+    </>
+  )
 }
