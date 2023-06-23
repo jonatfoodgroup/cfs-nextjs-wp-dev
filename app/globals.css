@@ -319,3 +319,7 @@ a img:hover {
 .hidden {
   display: none !important;
 }
+
+.text--red {
+  color: var(--cfs-red);
+}

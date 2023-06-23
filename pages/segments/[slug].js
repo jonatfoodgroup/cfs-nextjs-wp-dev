@@ -37,8 +37,6 @@ export async function getStaticProps({ params }) {
               content
             }
           }
-          
-
         }
       }
     `,
@@ -79,9 +77,9 @@ export function Subsegment({ headline, sectionCopy }) {
   return (
     <>
       <Col>
-      <div style={{padding: 20}}>
-        <h4>{headline}</h4>
-        <p>{sectionCopy}</p>
+        <div style={{ padding: 20 }}>
+          <h3 className="text--red">{headline}</h3>
+          <p>{sectionCopy}</p>
         </div>
       </Col>
     </>
@@ -115,9 +113,10 @@ export default function Segment({ segment }) {
           </Col>
         </Row>
 
-        <Row xs={12} md={3} style={{marginTop: '3rem'}}>
-          {
-            segment.segmentFields.subsegment &&
+        <PointsofDifference segment={segment} />
+
+        <Row xs={12} md={3} style={{ marginTop: "3rem" }}>
+          {segment.segmentFields.subsegment &&
             segment.segmentFields.subsegment.map((subsegment) => {
               return (
                 <Subsegment
@@ -126,41 +125,33 @@ export default function Segment({ segment }) {
                   key={subsegment.title}
                 />
               );
-            })
-          }
+            })}
         </Row>
 
-        <PointsofDifference segment={segment} />
+        
       </Container>
-
     </>
   );
 }
 
 // A 2 column layout with buttons on the left, and tab panels on the right for each point of difference
-const PointsofDifference = ({segment}) => {
-  useEffect(() => {
-    console.log(segment);
-  }, [segment]);
-  if (!segment.segmentFields.pointsOfDifference) return null
+const PointsofDifference = ({ segment }) => {
+  if (!segment.segmentFields.pointsOfDifference) return null;
   return (
     <>
-      {
-        segment.segmentFields.pointsOfDifference &&
+      {segment.segmentFields.pointsOfDifference &&
         segment.segmentFields.pointsOfDifference.map((pod) => {
           return (
             <Row className="mt-5" key={pod.title}>
               <Col md={{ span: 6 }}>
                 <h4>{pod.title}</h4>
-                
               </Col>
               <Col md={{ span: 6 }}>
                 <div dangerouslySetInnerHTML={{ __html: pod.content }}></div>
               </Col>
             </Row>
           );
-        })
-      }
+        })}
     </>
-  )
-}
+  );
+};
