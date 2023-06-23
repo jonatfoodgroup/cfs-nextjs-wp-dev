@@ -11,25 +11,25 @@ const items = [
   {
     id: 1,
     name: "Brands",
-    url: "#brands",
+    url: "brands",
     component: <BrandsMenu />
   },
   {
     id: 2,
     name: "Products",
-    url: "#products",
+    url: "products",
     component: <ProductsMenu />
   },
   {
     id: 3,
     name: "Segments",
-    url: "#segments",
+    url: "segments",
     component: <SegmentsMenu />
   },
   {
     id: 4,
     name: "Inspiration",
-    url: "#inspiration",
+    url: "inspiration",
     component: <InspirationMenu />
   }
 ]
