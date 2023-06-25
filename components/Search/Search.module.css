@@ -14,7 +14,7 @@
 /* Should have no border, #e8e8e8 background, font-size: .9rem */
 .searchInput {
   border: none;
-  background-color: #e8e8e8;
+  background-color: #f2f2f2;
   font-size: 0.9rem;
   padding: 0.5rem;
   width: 100%;

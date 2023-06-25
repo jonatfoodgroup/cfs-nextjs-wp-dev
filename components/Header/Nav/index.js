@@ -41,13 +41,12 @@ const NavMenu = () => {
       {items.map((item) => (
         <li key={item.id} className={styles.navItem}>
           <OverlayTrigger
-            trigger="click"
+            trigger={["hover", "focus"]}
             placement="bottom"
             overlay={
               <Popover id="popover-positioned-bottom" className={styles.popover}>
                 <Popover.Header as="h3">{item.name}</Popover.Header>
                 <Popover.Body>
-                  {/* Render the component and attached the setSelected function */}
                   {item.component}
                 </Popover.Body>
               </Popover>

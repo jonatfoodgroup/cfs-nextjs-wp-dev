@@ -11,6 +11,7 @@ const BrandsArchive = () => {
   const { loading, error, data } = useQuery(GET_BRANDS, {
     client: client,
   });
+  const [selectedBrand, setSelectedBrand] = useState(null);
 
   return (
     <>
@@ -43,9 +44,20 @@ const BrandsArchive = () => {
               <p>Loading...</p>
             ) : (
               <Row style={{marginTop: "50px !important"}}>
-                <BrandCarousel brands={data?.brands?.nodes} />
+                <BrandCarousel brands={data?.brands?.nodes} onClick={setSelectedBrand} />
               </Row>
             )}
+
+            <Row>
+              <Col>
+                {selectedBrand && (
+                  <div>
+                    <h4 className="centered red" style={{marginBottom: "20px !important"}}>{selectedBrand.title}</h4>
+                    <p>{selectedBrand.brandFields.brandDescription}</p>
+                  </div>
+                )}
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Container>
@@ -55,7 +67,7 @@ const BrandsArchive = () => {
 export default BrandsArchive;
 
 // React slick carousel of brands with 6 per slide
-const BrandCarousel = ({ brands }) => {
+const BrandCarousel = ({ brands, onClick }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -66,13 +78,16 @@ const BrandCarousel = ({ brands }) => {
   return (
     <Slider {...settings}>
       {brands.map((brand) => (
-        <Brand key={brand.id} brand={brand} />
+        <Brand key={brand.id} brand={brand} onClick={() => onClick(brand)} />
       ))}
     </Slider>
   );
 };
 
-const Brand = ({ brand }) => {
+const Brand = ({ 
+  brand,
+  onClick = () => {}
+}) => {
   const [logoUrl, setLogoUrl] = useState(brand.brandFields.brandLogo);
 
   useEffect(() => {
@@ -82,7 +97,7 @@ const Brand = ({ brand }) => {
   }, [brand]);
   return (
     <Col>
-      <img src={logoUrl} className="img-fluid" alt="{brand.title}" />
+      <img src={logoUrl} className="img-fluid" alt="{brand.title}" onClick={onClick} />
     </Col>
   );
 };

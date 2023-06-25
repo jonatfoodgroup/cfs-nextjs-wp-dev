@@ -7,9 +7,6 @@ export default function CampbellsCard({
   key,
   onClick
 }) {
-  useEffect(() => {
-    console.log("CampbellsCard item", item);
-  }, [item]);
 
   if (!item) {
     return null;
@@ -22,7 +19,10 @@ export default function CampbellsCard({
       onClick={onClick}
     >
       <Link href={`/segments/${item.slug}`}>
-        <Card.Img variant="top" src={item.featuredImage.node.guid} />
+        {
+          item.featuredImage.node &&
+          <Card.Img variant="top" src={item.featuredImage.node.guid} />
+        }
       </Link>
       <Card.Body>
        
