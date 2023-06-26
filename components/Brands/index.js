@@ -15,15 +15,15 @@ const Brands = () => {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <ul>
+    <table>
       {data.brands.nodes.map((brand, index) => (
-        <li key={index}>
-          <Badge pill variant="primary">
+        <tr key={index}>
+          <td>
             {brand.title}
-          </Badge>
-        </li>
+          </td>
+        </tr>
       ))}
-    </ul>
+    </table>
   );
 };
 

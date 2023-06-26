@@ -15,15 +15,15 @@ const Tags = () => {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <ul>
+    <table>
       {data.tags.nodes.map((tag, index) => (
-        <li key={index}>
-          <Badge pill variant="primary">
+        <tr key={index}>
+          <td>
             {tag.name}
-          </Badge>
-        </li>
+          </td>
+        </tr>
       ))}
-    </ul>
+    </table>
   );
 };
 

@@ -14,15 +14,15 @@ const Posts = () => {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <ul>
+    <table>
       {data.posts.nodes.map((post, index) => (
-        <li key={index}>
-          <h2>{post.title}</h2>
-          <p>{post.excerpt}</p>
-        </li>
+        <tr key={index}>
+          <td>{post.title}</td>
+          <td>{post.excerpt}</td>
+        </tr>
       ))}
-    </ul>
+    </table>
   );
-}
+};
 
 export default Posts;

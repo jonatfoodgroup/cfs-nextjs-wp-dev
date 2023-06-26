@@ -14,24 +14,25 @@ const Categories = () => {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <ul>
+    <table>
       {data.categories.nodes.map((category, index) => (
-        <li key={index}>
-          <h2>{category.name}</h2>
-          <p>{category.description}</p>
+        <tr key={index}>
+          <td>{category.name}</td>
+          <td>
           {category.children.nodes.length > 0 && (
             <ul>
               {category.children.nodes.map((child, index) => (
                 <li key={index}>
-                  <h3>{child.name}</h3>
+                  <p>{child.name}</p>
                   <p>{child.description}</p>
                 </li>
               ))}
             </ul>
           )}
-        </li>
+          </td>
+        </tr>
       ))}
-    </ul>
+    </table>
   );
 };
 

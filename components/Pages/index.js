@@ -14,14 +14,15 @@ const Pages = () => {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <ul>
-      {data.pages.nodes.map((page, index) => (
-        <li key={index}>
-          <h2>{page.title}</h2>
-          <p>{page.excerpt}</p>
-        </li>
+    <table>
+    {data.pages.nodes.map((page, index) => (
+        <tr key={index}>
+          <td>Page</td>
+          <td>{page.title}</td>
+          <td>{page.excerpt}</td>
+        </tr>
       ))}
-    </ul>
+    </table>
   );
 }
 

@@ -36,35 +36,33 @@ const items = [
 const NavMenu = () => {
   const [selected, setSelected] = useState(null);
 
+  
   return (
     <ul className={styles.nav}>
       {items.map((item) => (
-        <li key={item.id} className={styles.navItem}>
-          <OverlayTrigger
-            trigger={["hover", "focus"]}
-            placement="bottom"
-            overlay={
-              <Popover id="popover-positioned-bottom" className={styles.popover}>
-                <Popover.Header as="h3">{item.name}</Popover.Header>
-                <Popover.Body>
-                  {item.component}
-                </Popover.Body>
-              </Popover>
-            }
-            show={selected === item.id}
-            onToggle={() => {
-              if (selected === item.id) {
-                setSelected(null);
-              } else {
-                setSelected(item.id);
-              }
-            }}
-          >
+        <OverlayTrigger
+        key={item.id}
+        trigger={["hover", "focus"]}
+        placement="bottom"
+        overlay={
+          <Popover id="popover-positioned-bottom" className={styles.popover}>
+            <Popover.Header as="h3">{item.name}</Popover.Header>
+            <Popover.Body>
+              {item.component}
+            </Popover.Body>
+          </Popover>
+        }
+        show={selected === item.id}
+        onToggle={() => setSelected(item.id)}
+      >
+        <li  className={styles.navItem}>
+          
             <Button variant="link">
               {item.name}
             </Button>
-          </OverlayTrigger>
+          
         </li>
+        </OverlayTrigger>
       ))}
     </ul>
   );

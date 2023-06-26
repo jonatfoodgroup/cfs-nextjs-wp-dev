@@ -6,6 +6,7 @@ import TalkToAnExpert from "../CTAs/TalkToAnExpert";
 import LanguageSelector from "../LanguageSelector";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./Header.module.css";
+
 const Header = () => {
   return (
     <header data-aos="fade-down" data-aos-duration="750" data-aos-once="true" className={styles.header}>
