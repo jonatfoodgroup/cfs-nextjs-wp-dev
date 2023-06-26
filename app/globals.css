@@ -92,6 +92,10 @@
   font-family: var(--cfs-font) !important;
 }
 
+body a {
+  color: #1a1a1a !important;
+}
+
 html,
 body {
   font-family: var(--cfs-font) !important;
