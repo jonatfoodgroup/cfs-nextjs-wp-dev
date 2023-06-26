@@ -1,7 +1,7 @@
 @import url("https://use.typekit.net/cjd3qpj.css");
 /* avaialbe font wieghts: 400, 700, 900 */
 :root {
-  --cfs-font: azo-sans-web, sans-serif;
+  --cfs-font: azo-sans-web, sans-serif !important;
     /* setup CFS brand color vars : */
   --cfs-red: #B80720;
   --cfs-accent:#D02630;
@@ -89,17 +89,19 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: var(--cfs-font) !important;
 }
 
 html,
 body {
+  font-family: var(--cfs-font) !important;
   max-width: 100vw;
   overflow-x: hidden;
 }
 
 body {
 
-  font-family: var(--cfs-font);
+  font-family: var(--cfs-font) !important;
   color: (var(--cfs-black));
   /*color: rgb(var(--foreground-rgb));*/
  /* background: linear-gradient(
