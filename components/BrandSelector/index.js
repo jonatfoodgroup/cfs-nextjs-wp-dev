@@ -32,6 +32,7 @@ const BrandSelector = () => {
               <Button variant="primary" href="/brands">
               Soups, Meals &amp; Sides
             </Button>
+            &nbsp; &nbsp;
               <Button variant="primary" href="/brands">
               Snacks & Beverages
             </Button>

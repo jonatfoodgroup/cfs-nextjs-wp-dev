@@ -15,7 +15,7 @@ const Footer = () => {
             <Container>
               <Row>
                 {/* logo column */}
-                <Col
+               {/* <Col
                   xs={{ span: 12, order: "last" }}
                   md={{ span: 4, order: "first" }}
                   lg={2}
@@ -27,7 +27,7 @@ const Footer = () => {
                       class="img-fluid"
                     />
                   </div>
-                </Col>
+                </Col>*/} 
                 {/* footer nav 1 column */}
                 <Col xs={6} md={4} lg={2}>
                   <ul className={styles.footerLinkList}>
@@ -66,7 +66,11 @@ const Footer = () => {
                 {/* #placeholder for some cool widget thing TBD */}
 
                 <Col xs={12} lg={3}>
-                  <div>#placeholder for some cool widget thing TBD</div>
+                  <div> <img
+                      src="https://via.placeholder.com/200x140"
+                      alt="footer Logo"
+                      class="img-fluid"
+                    /></div>
                 </Col>
                 <Col xs={12} lg={3}>
                   <div className={styles.needHelpBlock}>
