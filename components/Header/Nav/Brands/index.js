@@ -48,11 +48,7 @@ const BrandsMenu = ({
   );
 };
 
-const BrandLogoGrid = ({ slug, brands }) => {
-  return <></>;
-};
-
-const BrandLogo = ({ brand }) => {
+const BrandLogo = ({ brand, onClick }) => {
   const [logo, setLogo] = useState(null);
   useEffect(() => {
     if (brand.brandFields.brandLogo) {
