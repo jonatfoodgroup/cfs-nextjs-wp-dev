@@ -82,27 +82,40 @@ const Results = ({ search }) => {
 };
 
 const MenuBox = ({ search }) => {
+
+  const [searchHistory, setSearchHistory] = useState([]); 
+  const [viewHistory, setViewHistory] = useState([]);
+  useEffect(() => {
+    const searchHistory = localStorage.getItem("cfs.search_history");
+    const viewHistory = localStorage.getItem("cfs.view_history");
+    setSearchHistory(searchHistory);
+    setViewHistory(viewHistory);
+  }, []);
+
   return (
     <div className={styles.menuBox}>
       {search.length < 3 && (
         <>
           <Row>
             <Col>
-              <p>Inspiration & Ideas</p>
+              <p data-aos="fade-in">Inspiration & Ideas</p>
               <hr />
               <Row>
                 <Col></Col>
               </Row>
               <Row>
                 <Col>
+                  <div data-aos="fade-in">
                   <p>Recently Searched</p>
                   <ul>
                     <li>Tomato</li>
                     <li>Tomato Sauce</li>
                     <li>Tomato Paste</li>
                   </ul>
+                  </div>
                 </Col>
                 <Col>
+                  <div data-aos="fade-in" data-aos-delay="250">
                   <p>Recently Viewed</p>
                   <ul>
                     <li>
@@ -119,6 +132,7 @@ const MenuBox = ({ search }) => {
                       <Link href="/inspiration/recipes/12345">Tomato</Link>
                     </li>
                   </ul>
+                  </div>
                 </Col>
               </Row>
             </Col>

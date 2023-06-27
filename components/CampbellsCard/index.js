@@ -5,7 +5,8 @@ import Link from 'next/link';
 export default function CampbellsCard({
   item,
   key,
-  onClick
+  onClick,
+  delay = 0,
 }) {
 
   if (!item) {
@@ -17,6 +18,9 @@ export default function CampbellsCard({
       className="shadow-sm"
       style={{ margin: "1em" }}
       onClick={onClick}
+      data-aos="fade-up"
+      data-aos-duration="750"
+      data-aos-delay={delay}
     >
       <Link href={`/segments/${item.slug}`}>
         {

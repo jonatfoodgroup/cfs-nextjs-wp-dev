@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { useState } from "react";
 import styles from "./EnlSignup.module.css";
 
@@ -10,26 +10,31 @@ const EnlSignup = () => {
       <Row className="align-items-center">
         <Col md={1}></Col>
         <Col md={5}>
-          <h2>Sign up for our newsletter</h2>
-          <p>Get the latest news and updates from Campbell&apos;s Foodservice.</p>
-          <div className="enl-signup-form">
-            <form>
-              <input
-                type="text"
-                placeholder="Email Address"
-                className={styles.enlSignupInput}
-              />
-              <input
-                type="submit"
-                value="Submit"
-                disabled={!checked}
-                className={styles.enlSignupSubmit}
-              />
-            </form>
+          <div data-aos="fade-up" data-aos-duration="750">
+            <h2>Sign up for our newsletter</h2>
+            <p>
+              Get the latest news and updates from Campbell&apos;s Foodservice.
+            </p>
+            <div className="enl-signup-form">
+              <form>
+                <input
+                  type="text"
+                  placeholder="Email Address"
+                  className={styles.enlSignupInput}
+                />
+                <Button
+                  type="submit"
+                  value="Submit"
+                  className={styles.enlSignupSubmit}
+                >
+                  Submit
+                </Button>
+              </form>
+            </div>
           </div>
         </Col>
         <Col md={6}>
-          <div className="enl-signup-image">
+          <div className="enl-signup-image" data-aos="fade-up" data-aos-duration="750" data-aos-delay="500">
             <img
               src="https://campbellsf1dev.wpengine.com/wp-content/uploads/2023/06/enl-signup-module-products.png"
               className="img-fluid"

@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col, Placeholder } from "react-bootstrap";
-// Import local masthead styles
 import styles from "./homerecipes.module.css";
-import { GraphQLID } from "graphql";
 
 export function HomeRecipeBlock({
   link,
@@ -38,10 +36,9 @@ const HomeRecipes = () => {
         </Row>
       </Container>
 
-      <Container>
+      <Container data-aos="fade-up" data-aos-duration="750">
         <Row className="justify-content-md-center">
           <Col md={5}>
-            {/* Large featured recipe  */}
             <img
               src="https://via.placeholder.com/650x650"
               className="img-fluid"

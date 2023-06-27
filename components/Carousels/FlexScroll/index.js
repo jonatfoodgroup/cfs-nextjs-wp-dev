@@ -6,10 +6,11 @@ export function Resource({
   alttext,
   doctitle,
   linkCopy,
+  delay,
 }) {
   return (
     <>
-      <li className={styles.card}>
+      <li className={styles.card} data-aos="fade-up" data-aos-duration="750" data-aos-delay={delay}>
         <div>
           <div variant="primary" className={styles.cardTag}>
             {cardTag}
@@ -40,6 +41,7 @@ const FlexScroll = () => {
             alttext={"some alt text"}
             doctitle={"Sell Sheet Title"}
             linkCopy={"Download"}
+            delay={0}
           />
           <Resource
             link={"https://google.com"}
@@ -48,6 +50,7 @@ const FlexScroll = () => {
             alttext={"some alt text"}
             doctitle={"Sell Sheet Title"}
             linkCopy={"Download"}
+            delay={100}
           />
           <Resource
             link={"https://google.com"}
@@ -56,6 +59,7 @@ const FlexScroll = () => {
             alttext={"some alt text"}
             doctitle={"Sell Sheet Title"}
             linkCopy={"Download"}
+            delay={200}
           />
           <Resource
             link={"https://google.com"}
@@ -64,6 +68,7 @@ const FlexScroll = () => {
             alttext={"some alt text"}
             doctitle={"Sell Sheet Title"}
             linkCopy={"Download"}
+            delay={300}
           />
           <Resource
             link={"https://google.com"}
@@ -72,6 +77,7 @@ const FlexScroll = () => {
             alttext={"some alt text"}
             doctitle={"Sell Sheet Title"}
             linkCopy={"Download"}
+            delay={400}
           />
 
           <Resource
@@ -81,6 +87,7 @@ const FlexScroll = () => {
             alttext={"some alt text"}
             doctitle={"Sell Sheet Title"}
             linkCopy={"Download"}
+            delay={500}
           />
         </ul>
       </div>
