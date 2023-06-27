@@ -36,7 +36,6 @@ const items = [
 const NavMenu = () => {
   const [selected, setSelected] = useState(null);
 
-  
   return (
     <ul className={styles.nav}>
       {items.map((item) => (
@@ -45,7 +44,7 @@ const NavMenu = () => {
         trigger={["hover", "focus"]}
         placement="bottom"
         overlay={
-          <Popover id="popover-positioned-bottom" className={styles.popover}>
+          <Popover id="popover-positioned-bottom" className={styles.popover} onMouseLeave={() => setSelected(null)}>
             <Popover.Header as="h3">{item.name}</Popover.Header>
             <Popover.Body>
               {item.component}
