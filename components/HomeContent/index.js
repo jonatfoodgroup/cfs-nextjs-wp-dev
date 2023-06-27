@@ -31,10 +31,6 @@ const HomeContent = () => {
         </Col>
       </Row>
     </Container>
-
- 
-
-
   );
 }
 export default HomeContent;

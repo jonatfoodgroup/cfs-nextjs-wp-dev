@@ -1,22 +1,20 @@
 .masthead {
   padding: 0;
   text-align: center;
-  
   margin: 0;
-  margin-bottom: 5vh;
+  /* margin-bottom: 5vh; */
 }
 .homeMasthead {
   /* pur a placeholder image here */
-
   background-image: url("https://via.placeholder.com/600x800");
   background-size: 100%;
   background-repeat: no-repeat;
-  min-height: 80vh;
+  /* min-height: 80vh; */
 }
 
 @media screen and (min-width: 768px) {
   .homeMasthead {
-  min-height: 440px;
+  min-height: 340px;
   background-image: url("https://campbellsf1dev.wpengine.com/wp-content/uploads/2023/06/fpo-masted.jpg");
   }
 

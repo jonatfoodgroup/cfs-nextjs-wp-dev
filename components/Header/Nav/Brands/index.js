@@ -5,8 +5,9 @@ import { Row, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-const BrandsMenu = (props) => {
-  console.log('propps',props);
+const BrandsMenu = ({
+  setSelected,
+}) => {
   const { loading, error, data } = useQuery(GET_BRANDS, {
     client: client,
   });
@@ -34,7 +35,7 @@ const BrandsMenu = (props) => {
             {data?.brands?.nodes?.map((brand, index) => {
               return (
                 <Col key={index} xs={12} md={4}>
-                  <BrandLogo brand={brand} />
+                  <BrandLogo brand={brand} onClick={() => setSelected(null)} />
                 </Col>
               );
             })}

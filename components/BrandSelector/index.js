@@ -46,14 +46,14 @@ const BrandSelector = () => {
       <Container>
         <Row>
           {data.brands.nodes.length > 0 &&
-            data.brands.nodes.map((brand) => <Brand brand={brand} key={brand.id} setBrand={setBrand} />)}
+            data.brands.nodes.map((brand,index) => <Brand brand={brand} key={brand.id} setBrand={setBrand} delay={index * 100} />)}
         </Row>
       </Container>
     </>
   );
 };
 
-const Brand = ({ brand, setBrand }) => {
+const Brand = ({ brand, setBrand, delay }) => {
   const [logoUrl, setLogoUrl] = useState(brand.brandFields.brandLogo);
   
   useEffect(() => {
@@ -63,12 +63,14 @@ const Brand = ({ brand, setBrand }) => {
   }, [brand]);
   return (
     <Col  className={styles.w20}>
-      <a onClick={(e) => {
+      <a 
+      data-aos="fade-up"
+      data-aos-delay={delay}
+      onClick={(e) => {
         e.preventDefault();
         setBrand(brand);
       }}>
         <img src={logoUrl} className={styles.BrandLogo} alt={brand.title} />
-
       </a>
     </Col>
   );

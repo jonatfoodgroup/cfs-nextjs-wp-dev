@@ -1,13 +1,17 @@
 .nav {
   width: 100%;
   margin: 0px;
+  
 }
 
 .navItem {
   display: inline-block !important;
   width: auto;
   margin: 0px;
+}
 
+.navItem button {
+  margin-top: 0px;
 }
 
 .link {
@@ -20,6 +24,8 @@
 .popover {
   width: 100%;
   max-width: 50vw !important;
+  background-color: var(--cfs-lightgray) !important;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
 @media all and (max-width: 767px) {

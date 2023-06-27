@@ -8,8 +8,19 @@
     border-bottom: 10px solid transparent;
     border-image: linear-gradient(to right, #A7A9AC, var(--cfs-lightgray)) 1;
     position: relative;
-    z-index: 9999;/*keep header overlapped for brands page iamges */
-    }
+    z-index: 9999;
+    transition: all 0.3s ease-in-out;
+}
+
+.isSticky {
+    padding: 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    border-image: linear-gradient(to right, #A7A9AC, var(--cfs-lightgray)) 1;
+}
 
 @media all and (max-width: 767px) {
     .header {

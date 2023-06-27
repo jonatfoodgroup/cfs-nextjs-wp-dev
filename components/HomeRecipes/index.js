@@ -33,10 +33,6 @@ const HomeRecipes = () => {
         <Row className="justify-content-md-center">
           <Col>
             <div className="RecipeCatLinks centered">
-              {/* <a href="#">Lorem ipsum</a>
-                            <a href="#">Lorem ipsum</a>
-                            <a href="#">Lorem ipsum</a>
-                            <a href="#">Lorem ipsum</a> */}
             </div>
           </Col>
         </Row>

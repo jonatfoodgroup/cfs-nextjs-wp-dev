@@ -5,8 +5,6 @@ import styles from "./masthead.module.css";
 
 const Masthead = () => {
   return (
-
-    
     <section className={styles.masthead}>
       <Row className={styles.homeMasthead}>
         <Col>

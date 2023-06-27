@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 
 // make a component that inlcudes an image, copy and a link
-export function WhatsNextBlock({ link, icon, alttext, sectionCopy, linkCopy }) {
+export function WhatsNextBlock({ link, icon, alttext, sectionCopy, linkCopy, delay }) {
   const [cta, setCta] = useState(null);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export function WhatsNextBlock({ link, icon, alttext, sectionCopy, linkCopy }) {
   return (
     <>
       <Link href={link} className={styles.whatsNextBlockLink}>
-        <div className={styles.whatsNextBlock}>
+        <div className={styles.whatsNextBlock} data-aos="fade-up" data-aos-delay={delay}>
           <img className={styles.whatsNextIcon} src={icon} alt={alttext} />
           <p>
             {sectionCopy} <br />
@@ -60,6 +60,7 @@ const WhatsNext = () => {
             alttext={"some alt text"}
             sectionCopy={"Speak with a Campbell’s sales representative."}
             linkCopy={"Contact Us"}
+            delay={100}
           />
         </Col>
 
@@ -72,6 +73,7 @@ const WhatsNext = () => {
             alttext={"some alt text"}
             sectionCopy={"View the latest business trends and insights."}
             linkCopy={"Get Inspired"}
+            delay={200}
           />
         </Col>
       </Row>
