@@ -5,7 +5,7 @@ import styles from "./masthead.module.css";
 
 const Masthead = () => {
   return (
-    <section className={styles.masthead}>
+    <section className={styles.masthead} data-aos="fade-in">
       <Row className={styles.homeMasthead}>
         <Col>
           <h1 className={styles.masthead__title}> headline to come</h1>

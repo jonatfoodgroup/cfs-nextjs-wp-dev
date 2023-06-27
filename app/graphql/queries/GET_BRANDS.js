@@ -4,6 +4,7 @@ const GET_BRANDS = gql`
   query GET_BRANDS {
     brands(first:100)  {
       nodes {
+        __typename
         id
         title
         slug

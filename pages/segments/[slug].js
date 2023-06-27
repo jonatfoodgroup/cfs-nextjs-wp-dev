@@ -92,14 +92,15 @@ export default function Segment({ segment }) {
       <Container>
         <Row>
           <Col md={{ span: 6 }} className={"mt-5"}>
-            <div dangerouslySetInnerHTML={{ __html: segment.content }}></div>
-            <Button variant="primary" size="lg" className="btn btn-primary">
+            <div data-aos="fade-up" dangerouslySetInnerHTML={{ __html: segment.content }}></div>
+            <Button data-aos="fade-up" data-aos-delay="100" variant="primary" size="lg" className="btn btn-primary">
               Connect with an expert
             </Button>
           </Col>
 
           <Col md={{ span: 6 }} className={"mt-3"}>
             <img
+              data-aos="fade-up" data-aos-delay="200"
               src={segment.featuredImage.node.guid}
               className="img-fluid"
               alt={segment.title}

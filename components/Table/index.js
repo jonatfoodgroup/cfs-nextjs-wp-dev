@@ -56,7 +56,7 @@ const FilterBar = ({
   selectedColumns
 }) => {
   return (
-    <div>
+    <div data-aos="fade-in">
       <Container>
         <div className="d-flex justify-content-between align-items-center">
             <Stack direction="horizontal" gap={3}>
@@ -66,7 +66,7 @@ const FilterBar = ({
             <Stack direction="horizontal" gap={3}>
               <ButtonGroup aria-label="Basic example">
                 <OverlayTrigger
-                  placement="top"
+                  placement="bottom"
                   trigger="click"
                   overlay={
                     <Popover id="popover-basic">
@@ -108,7 +108,7 @@ const ProductTable = () => {
   return (
     <div>
       <FilterBar columns={columns} setSelectedColumns={setSelectedColumns} selectedColumns={selectedColumns} />
-      <Table striped bordered hover>
+      <Table striped bordered hover responsive>
         <thead>
           <tr>
             {selectedColumns.map((column, index) => (

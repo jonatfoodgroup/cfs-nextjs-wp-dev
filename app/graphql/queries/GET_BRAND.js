@@ -3,6 +3,8 @@ import { gql } from "@apollo/client";
 const GET_BRAND = gql`
   query Brand($slug: ID!) {
     brand(id: $slug, idType: SLUG) {
+      __typename
+      id
       title
       content
       excerpt
