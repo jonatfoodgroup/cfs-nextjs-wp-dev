@@ -4,6 +4,7 @@ import client from "@/app/apollo-client";
 import { Row, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import styles from "./Brand.module.css";
 
 const BrandsMenu = ({
   setSelected,
@@ -65,6 +66,7 @@ const BrandLogo = ({ brand }) => {
       href={`/brands/${brand.slug}`}
       as={`/brands/${brand.slug}`}
       alt={brand.name}
+      className={styles.brandLogo}
       >
     {logo && <img src={logo} width={160} />}</Link>
   );
