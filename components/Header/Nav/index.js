@@ -42,6 +42,7 @@ const NavMenu = () => {
   ];
 
   return (
+    <>
     <ul className={styles.nav}>
       {items.map((item) => (
         <OverlayTrigger
@@ -67,6 +68,15 @@ const NavMenu = () => {
         </OverlayTrigger>
       ))}
     </ul>
+    {/* Mobile nav */}
+    <ul className={styles.mobileNav}>
+      {items.map((item) => (
+        <li key={item.id} className={styles.mobileNavItem}>
+        {item.name}
+        </li>
+      ))}
+    </ul>
+    </>
   );
 };
 

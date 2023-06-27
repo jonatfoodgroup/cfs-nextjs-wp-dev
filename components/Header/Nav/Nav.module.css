@@ -1,7 +1,16 @@
 .nav {
   width: 100%;
   margin: 0px;
-  
+}
+
+.mobileNav {
+  display: none;
+}
+
+@media all and (max-width: 767px) {
+  .nav {
+    display: none !important;
+  }
 }
 
 .navItem {

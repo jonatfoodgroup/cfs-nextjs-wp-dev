@@ -12,21 +12,7 @@ const BrandsMenu = ({
   const { loading, error, data } = useQuery(GET_BRANDS, {
     client: client,
   });
-  const tabs = [
-    {
-      title: "Soup, Meals & Sauces",
-      slug: "soups",
-      component: <BrandLogoGrid slug="soups" />,
-    },
-    {
-      title: "Snacks & Beverage",
-      slug: "snacks",
-      component: <BrandLogoGrid slug="snacks" />,
-    },
-  ];
-  const [selectedTab, setSelectedTab] = useState(tabs[0].slug);
   
-
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
   return (

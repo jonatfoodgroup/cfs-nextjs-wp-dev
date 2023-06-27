@@ -9,7 +9,7 @@ const EnlSignup = () => {
     <Container fluid className={styles.enlSignup}>
       <Row className="align-items-center">
         <Col md={1}></Col>
-        <Col md={5}>
+        <Col sm={{order: 1, span: 5}} xs={{ order: 2 }} >
           <div data-aos="fade-up" data-aos-duration="750">
             <h2>Sign up for our newsletter</h2>
             <p>
@@ -33,7 +33,7 @@ const EnlSignup = () => {
             </div>
           </div>
         </Col>
-        <Col md={6}>
+        <Col sm={{ order: 2, span: 6}} xs={{ order: 1}}>
           <div className="enl-signup-image" data-aos="fade-up" data-aos-duration="750" data-aos-delay="500">
             <img
               src="https://campbellsf1dev.wpengine.com/wp-content/uploads/2023/06/enl-signup-module-products.png"

@@ -105,6 +105,7 @@ const FilterBar = ({
 const ProductTable = () => {
   const [columns, setColumns] = React.useState(['Product', 'Case No.', 'SKU', 'Dimensions', 'Weight', 'Where to Buy']);
   const [selectedColumns, setSelectedColumns] = React.useState(['Product', 'Case No.', 'SKU', 'Dimensions', 'Weight', 'Where to Buy']);
+  
   return (
     <div>
       <FilterBar columns={columns} setSelectedColumns={setSelectedColumns} selectedColumns={selectedColumns} />
