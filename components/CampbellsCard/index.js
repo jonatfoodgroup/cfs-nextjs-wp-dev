@@ -18,7 +18,7 @@ export default function CampbellsCard({
       className="shadow-sm"
       style={{ margin: "1em" }}
       onClick={onClick}
-      data-aos="fade-up"
+      data-aos="fade-in"
       data-aos-duration="750"
       data-aos-delay={delay}
     >

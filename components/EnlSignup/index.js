@@ -13,7 +13,7 @@ const EnlSignup = () => {
           <div data-aos="fade-up" data-aos-duration="750">
             <h2>Sign up for our newsletter</h2>
             <p>
-              Get the latest news and updates from Campbell&apos;s Foodservice.
+              Get the latest news and updates from Campbell’s Foodservice.
             </p>
             <div className="enl-signup-form">
               <form>

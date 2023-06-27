@@ -35,7 +35,7 @@ const WhatsNext = () => {
     <Container className={styles.whatsNextBlockWrap}>
       <Row>
         <Col>
-          <h4 class="centered head-underline red">What's Next</h4>
+          <h4 class="centered head-underline red">What’s Next</h4>
         </Col>
       </Row>
       <Row>

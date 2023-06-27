@@ -259,22 +259,22 @@ h4 {
 .card-title {
   font-weight: 900;
 }
-.card-title a:link {
+.card-title  a:link, .card-title a:visited {
   color: var(--cfs-red);
   transition: all .2s ease-in;
 }
-.card-title a:link::after {
+.card-title a:link::after, .card-title a:visited::after {
   content: " →";
   font-size: 1.25rem;
   font-weight: 900;
-  color: var(--cfs-gray);
+  color: #A7A9AC !important;
   position: relative;
   right:0px;
   transition: all .2s ease-in;
 }
 
 .card-title a:hover {
-  color: var(--cfs-accent);
+  color: var(--cfs-black);
 }
 
 /* SLICK */
@@ -298,7 +298,7 @@ h4 {
 }
 
 .card > :first-child {
-  /* background-color: var(--cfs-red); */
+   background-color: var(--cfs-white);
 }
 .card a {
   overflow: hidden;
