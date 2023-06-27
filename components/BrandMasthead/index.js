@@ -18,10 +18,24 @@ const BrandMasthead = ({ slug }) => {
   }, []);
 
   useEffect(() => {
-    if (data) {
-      console.log(data);
+    if (window) {
+      // On scroll, translate the Y position of the images with a ratio for parallax effect
+      const parallax = () => {
+        const scrolled = window.pageYOffset;
+        const parallax = document.querySelectorAll(".parallax");
+        parallax.forEach((element) => {
+          let speed = element.getAttribute("data-speed");
+          element.style.transform = `translateY(${scrolled * speed}px)`;
+          // Ensure this is instant versus a smooth translate
+          element.style.transition = "transform 0s";
+        });
+      };
+
+      window.addEventListener("scroll", parallax);
+
     }
-  }, [data]);
+  }, []);
+
   if (loading) return null;
   if (error) return null;
   if (isSSR) return null;
@@ -32,12 +46,13 @@ const BrandMasthead = ({ slug }) => {
           <Row>
             <Col>
               <img
+                data-speed="-.2"
                 data-aos="fade-up-right"
                 data-aos-duration="750"
                 data-aos-once="true"
                 data-aos-delay="750"
                 src={data.brand.brandFields.brandleftimage.sourceUrl}
-                className={styles.brandImageLeft}
+                className={styles.brandImageLeft + " parallax"}
               />
             </Col>
 
@@ -60,19 +75,21 @@ const BrandMasthead = ({ slug }) => {
               <h2 class="centered head-underline">
                 {data.brand.brandFields.brandIntroHeadline}
               </h2>
-          
-              <div dangerouslySetInnerHTML={{ __html: (data.brand.content) }}></div>
-            
+
+              <div
+                dangerouslySetInnerHTML={{ __html: data.brand.content }}
+              ></div>
             </Col>
 
             <Col>
               <img
+                data-speed=".2"
                 data-aos="fade-up-left"
                 data-aos-duration="750"
                 data-aos-once="true"
                 data-aos-delay="750"
                 src={data.brand.brandFields.brandrightimage.sourceUrl}
-                className={styles.brandImageRight}
+                className={styles.brandImageRight + " parallax"}
               />
             </Col>
           </Row>
