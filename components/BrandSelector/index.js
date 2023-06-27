@@ -62,7 +62,7 @@ const Brand = ({ brand, setBrand, delay }) => {
     }
   }, [brand]);
   return (
-    <Col  className={styles.w20}>
+    <Col className={styles.w20}>
       <a 
       data-aos="fade-up"
       data-aos-delay={delay}

@@ -1,53 +1,62 @@
 .w20 {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 20%;
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+
+
+@media (min-width: 576px) {
+  .wsm20 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 20%;
     flex: 0 0 20%;
     max-width: 20%;
   }
-  
-  @media (min-width: 576px) {
-    .wsm20 {
-      -webkit-box-flex: 0;
-      -ms-flex: 0 0 20%;
-      flex: 0 0 20%;
-      max-width: 20%;
-    }
-  }
-  
-  @media (min-width: 768px) {
-    .wmd20 {
-      -webkit-box-flex: 0;
-      -ms-flex: 0 0 20%;
-      flex: 0 0 20%;
-      max-width: 20%;
-    }
-  }
-  
-  @media (min-width: 992px) {
-    .wlg20 {
-      -webkit-box-flex: 0;
-      -ms-flex: 0 0 20%;
-      flex: 0 0 20%;
-      max-width: 20%;
-    }
-  }
-  
-  @media (min-width: 1200px) {
-    .wxl20 {
-      -webkit-box-flex: 0;
-      -ms-flex: 0 0 20%;
-      flex: 0 0 20%;
-      max-width: 20%;
-    }
-  }
-  .BrandLogo {
-    max-width: 100%;
-    height: auto;
-    margin: 1em 0;
-  }
-.BrandModalHeader, .BrandModalFooter  {
-  border:0px
 }
+
+@media (min-width: 768px) {
+  .wmd20 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+@media (min-width: 992px) {
+  .wlg20 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wxl20 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+.BrandLogo {
+  max-width: 100%;
+  height: auto;
+  margin: 1em 0;
+}
+
+.BrandLogo:hover {
+  transform: scale(1.1);
+  transition: all .2s ease-in-out;
+}
+
+.BrandModalHeader, .BrandModalFooter {
+  border: 0px
+}
+
 .brandModal h2,
 .brandModal h4 {
   text-transform: uppercase;
