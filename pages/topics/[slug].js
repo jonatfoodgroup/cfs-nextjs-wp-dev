@@ -38,7 +38,7 @@ export async function getStaticPaths() {
   const { data } = await client.query({
     query: gql`
       query Tags {
-        tags {
+        tags(first:100) {
           nodes {
             slug
           }
@@ -55,11 +55,6 @@ export async function getStaticPaths() {
 
 // Display the tag name and posts
 export default function Tag({ tag }) {
-
-  useEffect(() => {
-    console.log(tag);
-  }, [tag]);
-  // If the tag doesn't exist in WP, show "doesn't exist"
   if (!tag) return <div>doesnt exist</div>;
   return (
     <>

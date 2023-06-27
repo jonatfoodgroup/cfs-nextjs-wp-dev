@@ -5,7 +5,7 @@ const GET_TAGS = gql`
     tags(first: 100) {
       nodes {
         id
-        name
+        title:name
         slug
         description
       }
