@@ -5,6 +5,16 @@
   max-width: 20%;
 }
 
+@media all and (max-width: 767px) {
+  .w20 {
+    -webkit-box-flex: 0;
+    /* 3 logos per row */
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
+
 
 @media (min-width: 576px) {
   .wsm20 {
