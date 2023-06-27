@@ -1,5 +1,5 @@
 .primaryFooter, .legalFooter {
-  padding: 1.5em 0;
+  padding: .8em 0 .5em;
 }
 
 .primaryFooter {
@@ -26,7 +26,8 @@
   text-align: center;
 }
 
-.legalFooter a:link {
+.legalFooter a, .legalFooter a:link {
+  font-size: 12px;
   color: var(--cfs-gray);
   text-decoration: underline;
 }
@@ -92,13 +93,15 @@
   padding: 0;
   margin-bottom: 1em;
 }
+
 .legalMenu li {
   display: inline-block;
   padding: 0 .25em;
 }
 
 .copyRightBlock {
-  font-size: .85em;
+  font-size: .7em;
+  text-align: left;
 }
 
 

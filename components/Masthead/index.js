@@ -7,8 +7,8 @@ const Masthead = () => {
   return (
     <section className={styles.masthead} data-aos="fade-in">
       <Row className={styles.homeMasthead}>
-        <Col>
-          <h1 className={styles.masthead__title}> headline to come</h1>
+        <Col><img src="https://campbellsf1dev.wpengine.com/wp-content/uploads/2023/06/home-headline-fullwidth.svg" alt="Get more with Campbell's" className={styles.masthead__title} />
+
         </Col>
       </Row>
     </section>

@@ -9,22 +9,26 @@
   background-image: url("https://via.placeholder.com/600x800");
   background-size: 100%;
   background-repeat: no-repeat;
+  min-height: 60vh;
+
+  background-position: center center;
   /* min-height: 80vh; */
 }
 
 @media screen and (min-width: 768px) {
   .homeMasthead {
-  min-height: 340px;
-  background-image: url("https://campbellsf1dev.wpengine.com/wp-content/uploads/2023/06/fpo-masted.jpg");
+    background-position: top center;
+    background-attachment: fixed;
+    background-size: cover;
+  min-height: 400px;
+  max-height: 50vh;
+  background-image: url("https://campbellsf1dev.wpengine.com/wp-content/uploads/2023/06/home-desktop-masthead-scaled.jpg");
   }
 
 }
   
 .masthead__title {
-  font-size: 2rem;
-  margin: 0;
-}
-.masthead__subtitle {
-  font-size: 1.5rem;
+ max-width:80%;
+ height: auto;
   margin: 0;
 }
