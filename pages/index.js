@@ -106,6 +106,22 @@ const SegmentCarousel = () => {
     }
   }, [data]);
 
+  // After this loads, make all the cards the same height
+  useEffect(() => {
+    if (segments.length > 0) {
+      let maxHeight = 0;
+      let cards = document.querySelectorAll(".segment-card");
+      cards.forEach((card) => {
+        if (card.clientHeight > maxHeight) {
+          maxHeight = card.clientHeight;
+        }
+      });
+      cards.forEach((card) => {
+        card.style.height = maxHeight + "px";
+      });
+    }
+  }, [segments]);
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error</p>;
   return (
