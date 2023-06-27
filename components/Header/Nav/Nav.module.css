@@ -14,6 +14,11 @@
   margin-top: 0px;
   color: #1a1a1a;
   font-weight: 600;
+  text-decoration: none !important;
+}
+
+.navItem button:hover {
+  color: var(--cfs-accent) !important;
 }
 
 .link {
