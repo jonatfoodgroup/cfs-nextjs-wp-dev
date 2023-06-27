@@ -1,52 +1,34 @@
 import { useState, useEffect } from "react";
-import { gql } from "@apollo/client";
-import client from "../..//app/apollo-client";
-import Header from "@/components/Header";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import Masthead from "@/components/Masthead";
 import ProductTable from "@/components/Table";
+
+const url = "https://services.campbells.com/us/products/product";
 // Components
-const ProductsPage = ({ products }) => {
+const ProductsPage = ({
+  products,
+}) => {
   useEffect(() => {
-    AOS.init({
-      duration: 750,
-      easing: 'ease-in-out-quart',
-    });
-
-  }, []);
-
+    console.log(products);
+  }, [products]);
   return (
     <>
-      <Header />
       <Masthead />
       <ProductTable />
     </>
   ); 
 };
 
-// Get data from WP
+// Get static props by fetching data from the API
 export async function getStaticProps() {
-  const { data } = await client.query({
-    query: gql`
-      query MyQuery {
-        products {
-          nodes {
-            id
-            title
-            slug
-            excerpt
-          }
-        }
-      }
-    `,
-  });
-
+  const response = await fetch(url);
+  const products = await response.text();
+  
   return {
     props: {
-      products: data.products.nodes,
+      products: products
     },
-  };
+  }
 }
+
 
 export default ProductsPage;
