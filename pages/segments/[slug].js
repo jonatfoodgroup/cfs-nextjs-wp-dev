@@ -110,11 +110,11 @@ export default function Segment({ segment }) {
 
         <PointsofDifference segment={segment} />
 
-        <Row xs={12} md={3} style={{ marginTop: "3rem" }}>
+        <Row style={{ marginTop: "3rem" }}>
           {segment.segmentFields.subsegment &&
             segment.segmentFields.subsegment.map((subsegment) => {
               return (
-                <Col key={subsegment.title}>
+                <Col key={subsegment.title} xs={12} md={3}>
                   <Subsegment
                     headline={subsegment.title}
                     sectionCopy={subsegment.description}
