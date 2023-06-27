@@ -4,6 +4,7 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import GET_CATEGORIES from "@/app/graphql/queries/GET_CATEGORIES";
 import client from "@/app/apollo-client";
+import Row from "./Row";
 
 const Categories = () => {
   const { loading, error, data } = useQuery(GET_CATEGORIES, {
@@ -17,7 +18,7 @@ const Categories = () => {
     <table>
       {data.categories.nodes.map((category, index) => (
         <tr key={index}>
-          <td>{category.title}</td>
+          <td>{category.name}</td>
           <td>
           {category.children.nodes.length > 0 && (
             <ul>

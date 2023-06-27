@@ -10,6 +10,21 @@ const GET_POSTS = gql`
         excerpt
         content
         date
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+        categories {
+          nodes {
+            name
+          }
+        }
+        tags {
+          nodes {
+            name
+          }
+        }
       }
     }
   }

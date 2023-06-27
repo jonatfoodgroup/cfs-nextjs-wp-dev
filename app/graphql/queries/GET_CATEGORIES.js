@@ -5,7 +5,7 @@ const GET_CATEGORIES = gql`
     categories(first: 100) {
       nodes {
         id
-        name
+        title:name
         slug
         description 
         children {
