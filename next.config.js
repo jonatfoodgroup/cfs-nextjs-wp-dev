@@ -5,6 +5,17 @@ const nextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+  images: {
+    domains: ['images.salsify.com'],
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'https://services.campbells.com/us/:path*',
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig
