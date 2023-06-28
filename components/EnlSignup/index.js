@@ -36,7 +36,7 @@ const EnlSignup = () => {
         <Col sm={{ order: 2, span: 6}} xs={{ order: 1}}>
           <div className="enl-signup-image" data-aos="fade-up" data-aos-duration="750" data-aos-delay="500">
             <img
-              src="https://campbellsf1dev.wpengine.com/wp-content/uploads/2023/06/enl-signup-module-products.png"
+              src="https://campbellsf1dev.wpengine.com/wp-content/uploads/2023/06/enl-signup-module-products-v2-1.png"
               className="img-fluid"
             />
           </div>
