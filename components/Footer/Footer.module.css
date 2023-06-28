@@ -20,7 +20,15 @@
 .footerLinkList li {
   margin-bottom: .75em;
 }
+.footerLinkList li a:link, .footerLinkList li a:visited {
+color: var(--cfs-black);
+text-decoration: none;
+}
 
+.footerLinkList li a:hover, .footerLinkList li a:active {
+  color: var(--cfs-accent);
+  text-decoration: underline;
+  }
 .legalFooter{
   background: linear-gradient(to bottom, #F5F7F8 0%,#A7A9AC 100%);
   text-align: center;
@@ -82,8 +90,12 @@
 .redIcon svg {
   margin: .2em;
 }
+.redIcon a:link, .redIcon a:visited {
+  color: var(--cfs-red);
+  text-decoration: none;
+}
 
-.redIcon a:hover {
+.redIcon a:hover, .redIcon a:active {
   color: var(--cfs-accent);
 } 
 
