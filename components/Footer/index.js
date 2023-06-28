@@ -103,20 +103,7 @@ const Footer = () => {
                         width="42"
                       />
                     </a>
-                    <a href="#">
-                      <Icon
-                        className="red-icon"
-                        icon="entypo-social:twitter-with-circle"
-                        width="42"
-                      />
-                    </a>
-                    <a href="#">
-                      <Icon
-                        className="red-icon"
-                        icon="entypo-social:instagram-with-circle"
-                        width="42"
-                      />
-                    </a>
+                   
                     <a href="#">
                       <Icon
                         icon="entypo-social:youtube-with-circle"
