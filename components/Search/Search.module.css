@@ -19,6 +19,11 @@
   padding: 0.5rem 15px !important;;
   width: 100%;
   box-sizing: border-box;
+  border-radius: 30px !important;
+  background-image:url('https://campbellsf1dev.wpengine.com/wp-content/uploads/2023/06/Icon-feather-search.png');
+  background-repeat:no-repeat;
+  background-position:96% center;
+  background-size: 20px;
 }
 
 .searchBox {

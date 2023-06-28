@@ -2,6 +2,7 @@
 /* avaialbe font wieghts: 400, 700, 900 */
 :root {
   --cfs-font: azo-sans-web, sans-serif !important;
+ --bs-font-sans-serif: azo-sans-web, sans-serif !important;
     /* setup CFS brand color vars : */
   --cfs-red: #B80720;
   --cfs-accent:#D02630;

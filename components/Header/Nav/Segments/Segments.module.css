@@ -1,0 +1,49 @@
+.linkList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.linkList li {
+margin:.8rem 0;
+}
+.linkList li a {
+ 
+  color: var(--cfs-black);
+} 
+
+.linkList li a:hover {
+ 
+  color: var(--cfs-accent);
+  text-decoration: underline;
+} 
+
+/* this should all get moved to a global css file */
+.menuContentCardLink {
+  border: 0;
+}
+
+.menuContentCard {
+  background-color: var(--cfs-white);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 10px;
+ }
+
+.menuTopic {
+  color: var(--cfs-red);
+  font-weight: 900;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.menuContentCard h6 {
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--cfs-black);
+}
+
+.menuContentCard img {
+  padding: 10px;
+}

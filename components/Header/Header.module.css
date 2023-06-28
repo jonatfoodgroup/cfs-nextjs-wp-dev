@@ -15,6 +15,7 @@
 .isSticky {
     padding: 0px;
     position: fixed;
+    padding: 20px 40px;
     top: 0;
     left: 0;
     right: 0;

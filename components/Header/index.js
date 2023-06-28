@@ -23,7 +23,7 @@ const Header = () => {
   }, []);
   return (
     <header data-aos="fade-down" data-aos-duration="750" data-aos-once="true" className={`${styles.header} ${isSticky ? styles.isSticky : ""}`}>
-      <Container>
+      <Container> 
         <Row className="align-items-center">
           <Col xs={12} md={1}>
             <CompanyLogo src="https://via.placeholder.com/200x60" alt="Company Logo" />
