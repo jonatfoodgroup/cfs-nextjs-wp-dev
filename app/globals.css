@@ -155,9 +155,11 @@ a:hover span  /* fixfor links inside wp content */
 
 /* typography */
 h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
 	font-weight: 900;
-	color: var(--cfs-black);
+	color: var(--cfs-red);
+  margin-bottom: 2rem;
+
 }
 
 h2 {
@@ -198,6 +200,11 @@ h4 {
   margin:12px auto;
   text-align: center;
 }
+/* post container font size */
+.pageHeader p {
+  font-size: 1.4rem;
+}
+
 
 /* buttons here! */
 .btn-link {

@@ -93,10 +93,12 @@ export default function Segment({ segment }) {
         <Row>
           
           <Col md={{ span: 5 }} className={"mt-5"}>
-            <div data-aos="fade-up" dangerouslySetInnerHTML={{ __html: segment.content }}></div>
+           <div className="pageHeader">
+           <div data-aos="fade-up" dangerouslySetInnerHTML={{ __html: segment.content }}></div>
             <Button data-aos="fade-up" data-aos-delay="100" variant="primary" size="lg" className="btn btn-primary">
               Connect with an expert
             </Button>
+            </div> 
           </Col>
           <Col md={1}></Col>
           <Col md={{ span: 6 }} className={"mt-3"}>
