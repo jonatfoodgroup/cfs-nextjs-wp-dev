@@ -205,7 +205,9 @@ h4 {
   font-size: 1.4rem;
 }
 
-
+section p {
+  font-size: 1.2rem;
+}
 /* buttons here! */
 .btn-link {
     color: var(--cfs-black);
