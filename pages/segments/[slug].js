@@ -117,7 +117,7 @@ export default function Segment({ segment }) {
           {segment.segmentFields.subsegment &&
             segment.segmentFields.subsegment.map((subsegment) => {
               return (
-                <Col key={subsegment.title} xs={12} md={3}>
+                <Col key={subsegment.title} xs={12} md={4}>
                   <Subsegment
                     headline={subsegment.title}
                     sectionCopy={subsegment.description}

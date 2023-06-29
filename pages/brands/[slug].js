@@ -7,12 +7,14 @@ import { Container, Row, Col, Tabs, Tab } from "react-bootstrap";
 import PageMeta from "@/components/PageMeta";
 import HomeRecipes from "@/components/HomeRecipes";
 import Slider from "react-slick";
-import ProductTable from "@/components/Table";
+//import ProductTable from "@/components/Table";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../app/globals.css";
 
 import BrandMasthead from "@/components/BrandMasthead";
+import  BrandFeatures from "@/components/BrandFeatures";
+
 import BrandPromo from "@/components/BrandPromotionBanner";
 import ItemCarousel from "@/components/Carousels/ItemCarousel";
 
@@ -86,6 +88,7 @@ export default function Brand({ brand }) {
       <PageMeta title={brand.title} description={brand.description} />
       <BrandMasthead slug={brand.slug} />
       <BrandPromo />
+      <BrandFeatures />
       <Section title={"Get Inspired"} backgroundColor={"#F7F5F2"}>
         <HomeRecipes />
       </Section>
@@ -126,7 +129,7 @@ export default function Brand({ brand }) {
       </Container>
 
       <Section title={"Product Catalog"} backgroundColor={"#f1f1f1"}>
-        <ProductTable />
+       {/* <ProductTable />*/}
       </Section>
     </>
   );
