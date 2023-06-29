@@ -8,6 +8,7 @@ import PageMeta from "@/components/PageMeta";
 import HomeRecipes from "@/components/HomeRecipes";
 import Slider from "react-slick";
 import ProductTable from "@/components/Table";
+import products from "@/app/data/products.json";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../app/globals.css";
@@ -126,7 +127,7 @@ export default function Brand({ brand }) {
       </Container>
 
       <Section title={"Product Catalog"} backgroundColor={"#f1f1f1"}>
-        <ProductTable />
+        {/* <ProductTable products={products.Result} /> */}
       </Section>
     </>
   );
