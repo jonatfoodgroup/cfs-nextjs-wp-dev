@@ -32,7 +32,15 @@
   scroll-snap-align: start;
   transition: all 0.2s;
 }
-.cardImage{}
+.cardImage{
+  max-height: 200px;
+  transition: all 0.2s;
+}
+
+.cardImage:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
 
 .card:not(:last-child) {
   margin-right: 10px;
@@ -47,10 +55,16 @@
   margin: 20px 0;
   max-width: 85%;
 }
+
+.card:hover h3 {
+  color: var(--red) !important;
+}
+
 .card .cardTag {
   font-weight: 900;
   color: var(--cfs-red);
   text-transform: uppercase;
+  font-size: .875rem;
 }
 .card .cardLinkWrapper {
   margin-top: auto;
@@ -61,9 +75,8 @@
   text-decoration: underline;
   color: var(--cfs-black);
   font-weight: 700;
-
- 
   transition: color 0.2s;
+  font-size: .875rem;
 }
 .card .cardLink:hover, .card .cardLink:focus {
   color: var(--cfs-red);
