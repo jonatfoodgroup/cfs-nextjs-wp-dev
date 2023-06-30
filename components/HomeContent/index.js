@@ -26,7 +26,7 @@ const HomeContent = () => {
     //use get_home to display the Content - thanks copilot:
     <Container>
       <Row>
-        <Col md={{ span: 6, offset: 3 }} className="centered">
+        <Col md={{ span: 8, offset: 2 }} className="centered">
           <div dangerouslySetInnerHTML={{ __html: (data.page.content) }}></div>
         </Col>
       </Row>
