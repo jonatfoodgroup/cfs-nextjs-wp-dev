@@ -129,7 +129,7 @@ export default function Segment({ segment }) {
           </Col>
         </Row>
       </Container>
-      <section style={{ background: "#F7F5F2", padding: '1rem 0px',marginTop: "50px"}}>
+      <section style={{ background: "#F7F5F2", padding: '30px 0px',marginTop: "50px"}}>
       <Container >
         <Row style={{  }}>
           <Col md={6} xs={12}>
