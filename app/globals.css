@@ -357,4 +357,11 @@ a img:hover {
 html body .btn-primary {
   background-color: var(--cfs-red);
   color: #fff;
+  border-color: var(--cfs-red);
+}
+
+html body .btn-primary:hover {
+  background-color: transparent;
+  color: var(--cfs-accent);
+  border-color: var(--cfs-red);
 }
