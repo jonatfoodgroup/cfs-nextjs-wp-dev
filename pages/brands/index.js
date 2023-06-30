@@ -64,7 +64,7 @@ const BrandsArchive = () => {
                         <img
                           src={selectedBrand.featuredImage.node.guid}
                           className="img-fluid"
-                          style={{maxHeight: "300px", margin: '0 auto'}}
+                          style={{maxHeight: "300px", margin: '20px auto'}}
                         />
                       </Col>
                       <Col lg={6}>
@@ -103,6 +103,7 @@ export default BrandsArchive;
 const BrandCarousel = ({ brands, onClick }) => {
   const settings = {
     dots: true,
+    arrows: true,
     infinite: true,
     speed: 500,
     slidesToShow: 6,
