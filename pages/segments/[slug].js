@@ -91,19 +91,28 @@ export default function Segment({ segment }) {
       <PageMeta title={segment.title} description={segment.excerpt} />
       <Container>
         <Row>
-          
           <Col md={{ span: 5 }} className={"mt-5"}>
-           <div className="pageHeader">
-           <div data-aos="fade-up" dangerouslySetInnerHTML={{ __html: segment.content }}></div>
-            <Button data-aos="fade-up" data-aos-delay="100" variant="primary" size="lg" className="btn btn-primary">
-              Connect with an expert
-            </Button>
-            </div> 
+            <div className="pageHeader">
+              <div
+                data-aos="fade-up"
+                dangerouslySetInnerHTML={{ __html: segment.content }}
+              ></div>
+              <Button
+                data-aos="fade-up"
+                data-aos-delay="100"
+                variant="primary"
+                size="lg"
+                className="btn btn-primary"
+              >
+                Connect with an expert
+              </Button>
+            </div>
           </Col>
           <Col md={1}></Col>
           <Col md={{ span: 6 }} className={"mt-3"}>
             <img
-              data-aos="fade-up" data-aos-delay="200"
+              data-aos="fade-up"
+              data-aos-delay="200"
               src={segment.featuredImage.node.guid}
               className="img-fluid"
               alt={segment.title}
@@ -133,18 +142,26 @@ export default function Segment({ segment }) {
 
 // A 2 column layout with buttons on the left, and tab panels on the right for each point of difference
 const PointsofDifference = ({ segment }) => {
+  const [selectedTab, setSelectedTab] = useState(0);
   if (!segment.segmentFields.pointsOfDifference) return null;
   return (
     <>
       {segment.segmentFields.pointsOfDifference &&
         segment.segmentFields.pointsOfDifference.map((pod) => {
           return (
-            <Row className="mt-5" key={pod.title}>
-              <Col md={{ span: 6 }}>
-                <h4 className="text--red">{pod.title}</h4>
+            <Row key={pod.title} style={{ marginTop: "3rem" }}>
+              <Col md={6}>
+                <h3
+                  className="text--red"
+                  onClick={() => setSelectedTab(segment.id)}
+                >
+                  {pod.title}
+                </h3>
               </Col>
-              <Col md={{ span: 6 }}>
-                <div dangerouslySetInnerHTML={{ __html: pod.content }}></div>
+              <Col md={6}>
+                {selectedTab === segment.id && (
+                  <div dangerouslySetInnerHTML={{ __html: pod.content }}></div>
+                )}
               </Col>
             </Row>
           );
