@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { gql, useQuery } from "@apollo/client";
 import GET_BRANDS from "@/app/graphql/queries/GET_BRANDS";
@@ -17,7 +17,7 @@ const BrandsArchive = () => {
       <PageMeta title="Brands" description="Campbell's Foodservice Brands" />
       <Container>
         <Row className={"align-middle"}>
-          <Col md={{ span: 6 }} className={"mt-5"} style={{padding: "40px"}}>
+          <Col md={{ span: 6 }} className={"mt-5"} style={{ padding: "40px" }}>
             <h2>
               We’ve been in the flavor game for over 150 years, and it shows.
             </h2>
@@ -38,21 +38,55 @@ const BrandsArchive = () => {
 
         <Row style={{ marginTop: "5rem", marginBottom: "5rem" }}>
           <Col>
-            <h4 className="centered red" style={{marginBottom: "20px !important"}}>Meet the Family</h4>
+            <h4
+              className="centered red"
+              style={{ marginBottom: "20px !important" }}
+            >
+              Meet the Family
+            </h4>
             {loading ? (
               <p>Loading...</p>
             ) : (
-              <Row style={{marginTop: "50px !important"}}>
-                <BrandCarousel brands={data?.brands?.nodes} onClick={setSelectedBrand} />
+              <Row style={{ marginTop: "50px !important" }}>
+                <BrandCarousel
+                  brands={data?.brands?.nodes}
+                  onClick={setSelectedBrand}
+                />
               </Row>
             )}
 
             <Row>
               <Col>
                 {selectedBrand && (
-                  <div style={{marginTop: "50px"}}>
-                    <h4 className="centered red" style={{marginBottom: "20px !important"}}>{selectedBrand.title}</h4>
-                    <p>{selectedBrand.brandFields.brandDescription}</p>
+                  <div style={{ marginTop: "50px" }}>
+                    <Row className="align-items-center">
+                      <Col lg={6} className="text-center">
+                        <img
+                          src={selectedBrand.featuredImage.node.guid}
+                          className="img-fluid"
+                          style={{maxHeight: "300px", margin: '0 auto'}}
+                        />
+                      </Col>
+                      <Col lg={6}>
+                        {" "}
+                        <h4>{selectedBrand.title}</h4>
+                        <h2>{selectedBrand.brandFields.brandIntroHeadline}</h2>
+                        <p>
+                          {" "}
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: selectedBrand.excerpt,
+                            }}
+                          ></div>
+                        </p>
+                        <Button
+                          variant="primary arrow"
+                          href={`/brands/${selectedBrand.slug}`}
+                        >
+                          View {selectedBrand.title}
+                        </Button>
+                      </Col>
+                    </Row>
                   </div>
                 )}
               </Col>
@@ -106,10 +140,7 @@ const BrandCarousel = ({ brands, onClick }) => {
   );
 };
 
-const Brand = ({ 
-  brand,
-  onClick = () => {}
-}) => {
+const Brand = ({ brand, onClick = () => {} }) => {
   const [logoUrl, setLogoUrl] = useState(brand.brandFields.brandLogo);
 
   useEffect(() => {
@@ -119,7 +150,12 @@ const Brand = ({
   }, [brand]);
   return (
     <Col>
-      <img src={logoUrl} className="img-fluid" alt="{brand.title}" onClick={onClick} />
+      <img
+        src={logoUrl}
+        className="img-fluid"
+        alt="{brand.title}"
+        onClick={onClick}
+      />
     </Col>
   );
 };
