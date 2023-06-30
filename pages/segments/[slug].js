@@ -10,7 +10,7 @@ import PageMeta from "@/components/PageMeta";
 export async function getStaticProps({ params }) {
   const { data } = await client.query({
     query: gql`
-      query Tag($slug: ID!) {
+      query Segment($slug: ID!) {
         segment(id: $slug, idType: SLUG) {
           title
           content
@@ -85,6 +85,14 @@ export function Subsegment({ headline, sectionCopy }) {
 }
 
 export default function Segment({ segment }) {
+  const [selectedTab, setSelectedTab] = useState(null);
+
+  useEffect(() => {
+    if (segment.segmentFields.pointsOfDifference) {
+      setSelectedTab(segment.segmentFields.pointsOfDifference[0]);
+    }
+  }, [segment]);
+
   if (!segment) return <div>doesnt exist</div>;
   return (
     <>
@@ -120,7 +128,19 @@ export default function Segment({ segment }) {
           </Col>
         </Row>
 
-        <PointsofDifference segment={segment} />
+        <Row style={{marginTop: '50px'}}>
+          <Col md={6} xs={12}>
+          <PointsofDifference segment={segment} setSelectedTab={setSelectedTab} />
+          </Col>
+          <Col md={6} xs={12}>
+            {selectedTab && (
+              <div style={{ marginTop: "3rem" }}>
+                <div dangerouslySetInnerHTML={{ __html: selectedTab.content }}></div>
+              </div>
+            )}
+          </Col>
+        </Row>
+        
 
         <Row style={{ marginTop: "3rem" }}>
           {segment.segmentFields.subsegment &&
@@ -140,9 +160,7 @@ export default function Segment({ segment }) {
   );
 }
 
-// A 2 column layout with buttons on the left, and tab panels on the right for each point of difference
-const PointsofDifference = ({ segment }) => {
-  const [selectedTab, setSelectedTab] = useState(0);
+const PointsofDifference = ({ segment,setSelectedTab }) => {
   if (!segment.segmentFields.pointsOfDifference) return null;
   return (
     <>
@@ -150,18 +168,14 @@ const PointsofDifference = ({ segment }) => {
         segment.segmentFields.pointsOfDifference.map((pod) => {
           return (
             <Row key={pod.title} style={{ marginTop: "3rem" }}>
-              <Col md={6}>
+              <Col md={12}>
                 <h3
+                  style={{fontSize: '1.5rem'}}
                   className="text--red"
-                  onClick={() => setSelectedTab(segment.id)}
+                  onClick={() => setSelectedTab(pod)}
                 >
                   {pod.title}
                 </h3>
-              </Col>
-              <Col md={6}>
-                {selectedTab === segment.id && (
-                  <div dangerouslySetInnerHTML={{ __html: pod.content }}></div>
-                )}
               </Col>
             </Row>
           );

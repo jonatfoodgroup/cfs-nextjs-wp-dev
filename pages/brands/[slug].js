@@ -88,10 +88,10 @@ export default function Brand({ brand }) {
       <PageMeta title={brand.title} description={brand.description} />
       <BrandMasthead slug={brand.slug} />
       <BrandPromo />
-      <BrandFeatures
+      {/* <BrandFeatures
       
       brandAttribute={brand.brandFields.keyAttribute} 
-      />
+      /> */}
       <Section title={"Get Inspired"} backgroundColor={"#F7F5F2"}>
         <HomeRecipes />
       </Section>
