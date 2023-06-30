@@ -11,6 +11,7 @@ const GET_BRAND = gql`
       slug
       brandFields {
         brandIntroHeadline
+        keyAttribute
         brandLogo {
           sourceUrl
         }

@@ -88,7 +88,10 @@ export default function Brand({ brand }) {
       <PageMeta title={brand.title} description={brand.description} />
       <BrandMasthead slug={brand.slug} />
       <BrandPromo />
-      <BrandFeatures />
+      <BrandFeatures
+      
+      brandAttribute={brand.keyAttribute} 
+      />
       <Section title={"Get Inspired"} backgroundColor={"#F7F5F2"}>
         <HomeRecipes />
       </Section>
@@ -129,7 +132,7 @@ export default function Brand({ brand }) {
       </Container>
 
       <Section title={"Product Catalog"} backgroundColor={"#f1f1f1"}>
-        <ProductTable />
+        
       </Section>
     </>
   );

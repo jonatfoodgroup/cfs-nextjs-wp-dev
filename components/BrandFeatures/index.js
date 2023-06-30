@@ -5,7 +5,8 @@ import client from "@/app/apollo-client";
 import GET_BRAND from "@/app/graphql/queries/GET_BRAND";
 import styles from "./BrandFeatures.module.css";
 
-function BrandFeatureBlock() {
+const BrandFeatures = ({ brandAttribute, brandImage  }) => {
+
   return (
       <>
    <Container className={styles.keyAttribute} >
@@ -19,14 +20,13 @@ function BrandFeatureBlock() {
             data-aos-once="true"
             data-aos-delay="750"
             >
-        <p>key attribute here<br/>
-        Top marks: Cape Cod® Kettle Cooked Potato Chips are the #1 kettle chip in the U.S.*</p>
+        <p>brandAttribute field here<br />{brandAttribute}</p>
 
           </Col>
 
           <Col md={6}>
             <img  
-            src="https://campbellsf1dev.wpengine.com/wp-content/uploads/2023/06/Kette_FAM_small.png" className="img-fluid brandFeaturedImage" 
+           src={brandImage} 
             data-speed="-.2"
             data-aos="fade-left"
             data-aos-duration="750"
@@ -40,9 +40,4 @@ function BrandFeatureBlock() {
   );
 }
 
-export default function BrandFeature() {
-  return (
-    <BrandFeatureBlock />
-  );
-}
-
+export default BrandFeatures;
