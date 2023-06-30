@@ -5,6 +5,7 @@ import { Container, Row, Col, Button, Tabs } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../app/globals.css";
 import PageMeta from "@/components/PageMeta";
+import { Icon } from "@iconify/react";
 
 // Get the tag by slug from the wordpress graphql api
 export async function getStaticProps({ params }) {
@@ -127,21 +128,30 @@ export default function Segment({ segment }) {
             />
           </Col>
         </Row>
-
-        <Row style={{marginTop: '50px'}}>
+      </Container>
+      <section style={{ background: "#F7F5F2", padding: '1rem 0px',marginTop: "50px"}}>
+      <Container >
+        <Row style={{  }}>
           <Col md={6} xs={12}>
-          <PointsofDifference segment={segment} setSelectedTab={setSelectedTab} />
+            <PointsofDifference
+              segment={segment}
+              setSelectedTab={setSelectedTab}
+            />
           </Col>
           <Col md={6} xs={12}>
             {selectedTab && (
-              <div style={{ marginTop: "3rem" }}>
-                <div dangerouslySetInnerHTML={{ __html: selectedTab.content }}></div>
+              <div style={{ marginTop: "0rem" }}>
+                <div
+                  dangerouslySetInnerHTML={{ __html: selectedTab.content }}
+                ></div>
               </div>
             )}
           </Col>
         </Row>
-        
+      </Container>
+      </section>
 
+      <Container>
         <Row style={{ marginTop: "3rem" }}>
           {segment.segmentFields.subsegment &&
             segment.segmentFields.subsegment.map((subsegment) => {
@@ -160,21 +170,25 @@ export default function Segment({ segment }) {
   );
 }
 
-const PointsofDifference = ({ segment,setSelectedTab }) => {
+const PointsofDifference = ({ segment, setSelectedTab }) => {
   if (!segment.segmentFields.pointsOfDifference) return null;
   return (
     <>
       {segment.segmentFields.pointsOfDifference &&
         segment.segmentFields.pointsOfDifference.map((pod) => {
           return (
-            <Row key={pod.title} style={{ marginTop: "3rem" }}>
+            <Row key={pod.title} style={{ marginTop: "0rem" }}>
               <Col md={12}>
                 <h3
-                  style={{fontSize: '1.5rem'}}
+                  style={{ fontSize: "1.5rem", margin: 0, lineHeight: "2.5", borderBottom: '1px solid #ccc', cursor: 'pointer' }}
                   className="text--red"
                   onClick={() => setSelectedTab(pod)}
                 >
                   {pod.title}
+                  <Icon
+                    icon="akar-icons:chevron-right"
+                    style={{ marginLeft: "1rem" }}
+                  />
                 </h3>
               </Col>
             </Row>
