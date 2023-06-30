@@ -13,6 +13,7 @@ export default function Layout({ children }) {
     AOS.init({
       duration: 1000,
       once: true,
+      offset: 100,
     });
   }, []);
   return (
