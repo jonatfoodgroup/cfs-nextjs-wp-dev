@@ -18,7 +18,7 @@
 }
 
 .footerLinkList li {
-  margin-bottom: .75em;
+  margin-bottom: .5em;
 }
 .footerLinkList li a:link, .footerLinkList li a:visited {
 color: var(--cfs-black);
@@ -83,7 +83,7 @@ text-decoration: none;
   color: var(--cfs-red);
   padding: 0;
   margin: auto;
-  margin-bottom: 1em;
+  margin-bottom: .5em;
   text-align: center;
 }
 

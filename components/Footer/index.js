@@ -15,20 +15,21 @@ const Footer = () => {
             <Container>
               <Row>
                 {/* logo column */}
-               {/* <Col
+                <Col
                   xs={{ span: 12, order: "last" }}
                   md={{ span: 4, order: "first" }}
                   lg={2}
                 >
                   <div className={styles.footerLogo}>
                     <img
-                      src="https://via.placeholder.com/200x140"
+                      src="https://campbellsf1dev.wpengine.com/wp-content/uploads/2023/06/CampbellsFoodservice_Logo_.svg"
                       alt="footer Logo"
                       class="img-fluid"
                     />
                   </div>
-                </Col>*/} 
+                </Col>
                 {/* footer nav 1 column */}
+                
                 <Col xs={6} md={4} lg={2}>
                   <ul className={styles.footerLinkList}>
                     <li>
@@ -62,15 +63,16 @@ const Footer = () => {
                     </li>
                   </ul>
                 </Col>
-
-                {/* #placeholder for some cool widget thing TBD */}
-
-                <Col xs={12} lg={3}>
-                  <div> <img
-                      src="https://via.placeholder.com/200x140"
+                <Col xs={12} lg={2}>
+                  <div className="text-center">
+                  <a href="">
+                    <img
+                      src="https://www.campbellsfoodservice.com/wp-content/uploads/2021/10/Campbells_Culinary_Innovation_Logo-with_Trendpulse_2_Color_White.png"
                       alt="footer Logo"
                       class="img-fluid"
-                    /></div>
+                    />
+                    Campbell's Culinary Innovation</a>
+                  </div>
                 </Col>
                 <Col xs={12} lg={3}>
                   <div className={styles.needHelpBlock}>
@@ -91,7 +93,7 @@ const Footer = () => {
                   </div>
 
                   <div className={styles.socialBlock}>
-                    <p>
+                    <p style={{marginBottom: '0'}}>
                       <strong>Stay connected with Campbell’s</strong>
                     </p>
                   </div>
@@ -103,7 +105,7 @@ const Footer = () => {
                         width="42"
                       />
                     </a>
-                   
+
                     <a href="#">
                       <Icon
                         icon="entypo-social:youtube-with-circle"
@@ -141,19 +143,41 @@ const Footer = () => {
                   {/*replace with wp menu */}
                   <ul className={styles.legalMenu}>
                     <li>
-                      <a href="https://www.campbellsoupcompany.com/about-us/faqs/#Allergens" target="_blank">Allergen Labeling </a>
+                      <a
+                        href="https://www.campbellsoupcompany.com/about-us/faqs/#Allergens"
+                        target="_blank"
+                      >
+                        Allergen Labeling{" "}
+                      </a>
                     </li>
                     <li>
-                      <a href="https://www.campbellsoupcompany.com/privacy-policy/" target="_blank">Privacy Policy</a>
+                      <a
+                        href="https://www.campbellsoupcompany.com/privacy-policy/"
+                        target="_blank"
+                      >
+                        Privacy Policy
+                      </a>
                     </li>
                     <li>
-                      <a href="https://www.campbellsoupcompany.com/privacy-policy/#advertising" target="_blank">Interest Based Ads</a>
+                      <a
+                        href="https://www.campbellsoupcompany.com/privacy-policy/#advertising"
+                        target="_blank"
+                      >
+                        Interest Based Ads
+                      </a>
                     </li>
                     <li>
-                      <a href="https://www.campbellsoupcompany.com/terms-of-use/" target="_blank">Legal Notices </a>
+                      <a
+                        href="https://www.campbellsoupcompany.com/terms-of-use/"
+                        target="_blank"
+                      >
+                        Legal Notices{" "}
+                      </a>
                     </li>
                     <li>
-                      <a href="#" target="_blank">Do Not Sell My Personal Information</a>
+                      <a href="#" target="_blank">
+                        Do Not Sell My Personal Information
+                      </a>
                     </li>
                   </ul>
                 </Col>
