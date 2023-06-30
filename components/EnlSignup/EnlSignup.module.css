@@ -3,6 +3,7 @@
     color: var(--cfs-white);
     padding: 1em;
 }
+
 .enlSignup h2 {
     font-size: 1.65rem;
     font-weight: 700;
@@ -16,22 +17,21 @@
     margin-top: 1em;
     font-size: 0.9rem;
 }
-    input[type="text"].enlSignupInput {
-        background-color: var(--cfs-white);
-        color: var(--cfs-black);
-        border: 0px;;
-        border-radius: 0;
-        padding: 10px;
-        min-width: 50%;
-       /* width: 100%;*/
-    }
+
+input[type="text"].enlSignupInput {
+    background-color: var(--cfs-white);
+    color: var(--cfs-black);
+    border: 0px;
+    border-radius: 0;
+    padding: 10px;
+    min-width: 50%;
+}
 
 
-        input[type="submit"].enlSignupSubmit {
-            background-color: var(--cfs-black);
-            color: var(--cfs-white);
-            border: 0px;
-            border-radius: 0;
-            padding: 10px 20px;
-           
-        }
+input[type="submit"].enlSignupSubmit {
+    background-color: var(--cfs-black) !important;
+    color: var(--cfs-white);
+    border: 0px;
+    border-radius: 0;
+    padding: 10px 20px;
+}
