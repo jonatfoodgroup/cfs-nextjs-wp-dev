@@ -64,7 +64,7 @@ const Footer = () => {
                   </ul>
                 </Col>
                 <Col xs={12} lg={2}>
-                  <div className="text-center">
+                  <div className={styles.footerLink + " text-center"}>
                   <a href="">
                     <img
                       src="https://www.campbellsfoodservice.com/wp-content/uploads/2021/10/Campbells_Culinary_Innovation_Logo-with_Trendpulse_2_Color_White.png"
@@ -76,7 +76,7 @@ const Footer = () => {
                 </Col>
                 <Col xs={12} lg={3}>
                   <div className={styles.needHelpBlock}>
-                    <h4>Need help with something?</h4>
+                    <h4 style={{fontWeight: 700, color: '#1a1a1a'}}>Need help with something?</h4>
 
                     <div className={styles.telephoneBlock}>
                       <div>

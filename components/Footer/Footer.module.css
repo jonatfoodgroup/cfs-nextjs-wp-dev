@@ -16,7 +16,15 @@
   margin: 0;
   padding: 0;
 }
-
+.footerLink {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+.footerLink a {
+  color: #1a1a1a !important;
+  text-decoration: none;
+  font-size: .875rem;
+}
 .footerLinkList li {
   margin-bottom: .5em;
 }
