@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Link 
 
 import styles from "./Footer.module.css";
 import { Icon } from "@iconify/react";
