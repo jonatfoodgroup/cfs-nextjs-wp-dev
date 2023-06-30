@@ -6,7 +6,6 @@ import client from "@/app/apollo-client";
 import GET_BRANDS from "@/app/graphql/queries/GET_BRANDS";
 import styles from "./BrandSelector.module.css";
 
-
 const BrandSelector = () => {
   const { loading, error, data } = useQuery(GET_BRANDS, {
     client: client,
@@ -24,22 +23,20 @@ const BrandSelector = () => {
       <Container>
         <Row>
           <Col>
-            <h4 class="centered">
+            <h4 class="centered" style={{marginBottom: "30px"}}>
               Check out our complete portfolio of iconic brands
             </h4>
             <Row>
-              <Col style={{textAlign: "center"}}>
-              <Button variant="primary" href="/brands">
-              Soups, Meals &amp; Sides
-            </Button>
-            &nbsp; &nbsp;
-              <Button variant="primary" href="/brands">
-              Snacks & Beverages
-            </Button>
+              <Col style={{ textAlign: "center", marginBottom: '30px' }}>
+                <Button variant="primary" href="/brands">
+                  Soups, Meals &amp; Sides
+                </Button>
+                &nbsp; &nbsp;
+                <Button variant="primary" href="/brands">
+                  Snacks & Beverages
+                </Button>
               </Col>
             </Row>
-            
-
           </Col>
         </Row>
       </Container>
@@ -47,7 +44,14 @@ const BrandSelector = () => {
       <Container>
         <Row>
           {data.brands.nodes.length > 0 &&
-            data.brands.nodes.map((brand,index) => <Brand brand={brand} key={brand.id} setBrand={setBrand} delay={index * 100} />)}
+            data.brands.nodes.map((brand, index) => (
+              <Brand
+                brand={brand}
+                key={brand.id}
+                setBrand={setBrand}
+                delay={index * 100}
+              />
+            ))}
         </Row>
       </Container>
     </>
@@ -56,7 +60,7 @@ const BrandSelector = () => {
 
 const Brand = ({ brand, setBrand, delay }) => {
   const [logoUrl, setLogoUrl] = useState(brand.brandFields.brandLogo);
-  
+
   useEffect(() => {
     if (brand.brandFields.brandLogo) {
       setLogoUrl(brand.brandFields.brandLogo.sourceUrl);
@@ -64,13 +68,14 @@ const Brand = ({ brand, setBrand, delay }) => {
   }, [brand]);
   return (
     <Col className={styles.w20}>
-      <a 
-      data-aos="fade-up"
-      data-aos-delay={delay}
-      onClick={(e) => {
-        e.preventDefault();
-        setBrand(brand);
-      }}>
+      <a
+        data-aos="fade-up"
+        data-aos-delay={delay}
+        onClick={(e) => {
+          e.preventDefault();
+          setBrand(brand);
+        }}
+      >
         <img src={logoUrl} className={styles.BrandLogo} alt={brand.title} />
       </a>
     </Col>
@@ -79,36 +84,48 @@ const Brand = ({ brand, setBrand, delay }) => {
 
 export default BrandSelector;
 
-
-const BrandModal = ({
-  brand,
-  setBrand
-}) => {
+const BrandModal = ({ brand, setBrand }) => {
   if (!brand) return null;
   return (
     <>
       <Modal size="lg" show={brand} onHide={() => setBrand(null)}>
-        <Modal.Header closeButton className={styles.BrandModalHeader}></Modal.Header>
+        <Modal.Header
+          closeButton
+          className={styles.BrandModalHeader}
+        ></Modal.Header>
         <Modal.Body>
           <Container className={styles.brandModal}>
             <Row className="align-items-center">
-              <Col lg={6}><img src={brand.featuredImage.node.guid} className="img-fluid" /></Col>
-              <Col lg={6}> <h4>{brand.title}</h4>
-              <h2>{brand.brandFields.brandIntroHeadline}</h2>
-              <p> <div dangerouslySetInnerHTML={{ __html: (brand.excerpt) }}></div></p></Col>
-              </Row>
+              <Col lg={6}>
+                <img
+                  src={brand.featuredImage.node.guid}
+                  className="img-fluid"
+                />
+              </Col>
+              <Col lg={6}>
+                {" "}
+                <h4>{brand.title}</h4>
+                <h2>{brand.brandFields.brandIntroHeadline}</h2>
+                <p>
+                  {" "}
+                  <div
+                    dangerouslySetInnerHTML={{ __html: brand.excerpt }}
+                  ></div>
+                </p>
+              </Col>
+            </Row>
           </Container>
-
         </Modal.Body>
         <Modal.Footer className={styles.BrandModalFooter}>
-         {/*} <Button variant="secondary" onClick={() => setBrand(null)}>
+          {/*} <Button variant="secondary" onClick={() => setBrand(null)}>
             Close
           </Button>
-          */}<Button variant="primary arrow" href={`/brands/${brand.slug}`}>
+          */}
+          <Button variant="primary arrow" href={`/brands/${brand.slug}`}>
             Learn More
           </Button>
         </Modal.Footer>
       </Modal>
     </>
-  )
-}
+  );
+};

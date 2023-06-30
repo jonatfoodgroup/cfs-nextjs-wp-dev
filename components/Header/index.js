@@ -13,13 +13,13 @@ const Header = () => {
   const [isSticky, setSticky] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 800) {
-        setSticky(true);
-      } else {
-        setSticky(false);
-      }
-    });
+    // window.addEventListener("scroll", () => {
+    //   if (window.scrollY > 800) {
+    //     setSticky(true);
+    //   } else {
+    //     setSticky(false);
+    //   }
+    // });
   }, []);
   return (
     <header data-aos="fade-down" data-aos-duration="750" data-aos-once="true" className={`${styles.header} ${isSticky ? styles.isSticky : ""}`}>
