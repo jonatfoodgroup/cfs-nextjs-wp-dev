@@ -356,4 +356,5 @@ a img:hover {
 
 html body .btn-primary {
   background-color: var(--cfs-red);
+  color: #fff;
 }

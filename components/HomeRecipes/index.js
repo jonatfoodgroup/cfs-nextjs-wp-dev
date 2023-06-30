@@ -25,6 +25,15 @@ export function HomeRecipeBlock({
 }
 
 const HomeRecipes = () => {
+  const [recipes, setRecipes] = useState([]);
+  const [totalCount, setTotalCount] = useState(0);
+  fetch("https://services.campbells.com/recipes/recipe").then((response) => {
+    response.text().then((text) => {
+      const data = JSON.parse(text);
+      setRecipes(data.Result);
+      setTotalCount(data.TotalResults);
+    });
+  });
   return (
     <>
       <Container>
