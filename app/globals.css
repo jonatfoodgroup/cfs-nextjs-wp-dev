@@ -353,3 +353,7 @@ a img:hover {
   color: var(--cfs-red);
 }
 
+
+html body .btn-primary {
+  background-color: var(--cfs-red);
+}
