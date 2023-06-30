@@ -1,5 +1,5 @@
 @import url("https://use.typekit.net/cjd3qpj.css");
-/* avaialbe font wieghts: 400, 700, 900 */
+
 :root {
   --cfs-font: azo-sans-web, sans-serif !important;
  --bs-font-sans-serif: azo-sans-web, sans-serif !important;
@@ -156,7 +156,7 @@ a:hover span  /* fixfor links inside wp content */
 /* typography */
 h1 {
   font-size: 3rem;
-	font-weight: 700;
+	font-weight: 900;
 	color: var(--cfs-red);
   margin-bottom: 2rem;
 
@@ -358,6 +358,7 @@ html body .btn-primary {
   background-color: var(--cfs-red);
   color: #fff;
   border-color: var(--cfs-red);
+  transition: all .2s ease-in;
 }
 
 html body .btn-primary:hover {
