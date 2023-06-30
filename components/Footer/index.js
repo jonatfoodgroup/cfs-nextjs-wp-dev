@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import Link 
 
 import styles from "./Footer.module.css";
 import { Icon } from "@iconify/react";
@@ -42,7 +43,7 @@ const Footer = () => {
                       <a href="#">Find Your Segment</a>
                     </li>
                     <li>
-                      <a href="#">Our Brand</a>
+                      <a href="#">Our Brands</a>
                     </li>
                   </ul>
                 </Col>
