@@ -65,7 +65,7 @@ const Footer = () => {
                 </Col>
                 <Col xs={12} lg={2}>
                   <div className={styles.footerLink + " text-center"}>
-                  <a href="">
+                  <a href="javascript://" onClick={() => {}}>
                     <img
                       src="https://www.campbellsfoodservice.com/wp-content/uploads/2021/10/Campbells_Culinary_Innovation_Logo-with_Trendpulse_2_Color_White.png"
                       alt="footer Logo"
