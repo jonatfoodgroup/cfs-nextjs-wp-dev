@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { gql, useQuery } from "@apollo/client";
 import GET_BRANDS from "@/app/graphql/queries/GET_BRANDS";
 import client from "@/app/apollo-client";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "../../app/globals.css";
 import PageMeta from "@/components/PageMeta";
 import Slider from "react-slick";
@@ -51,7 +50,7 @@ const BrandsArchive = () => {
             <Row>
               <Col>
                 {selectedBrand && (
-                  <div>
+                  <div style={{marginTop: "50px"}}>
                     <h4 className="centered red" style={{marginBottom: "20px !important"}}>{selectedBrand.title}</h4>
                     <p>{selectedBrand.brandFields.brandDescription}</p>
                   </div>

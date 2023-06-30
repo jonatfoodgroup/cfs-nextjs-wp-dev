@@ -90,7 +90,7 @@ export default function Brand({ brand }) {
       <BrandPromo />
       <BrandFeatures
       
-      brandAttribute={brand.keyAttribute} 
+      brandAttribute={brand.brandFields.keyAttribute} 
       />
       <Section title={"Get Inspired"} backgroundColor={"#F7F5F2"}>
         <HomeRecipes />
