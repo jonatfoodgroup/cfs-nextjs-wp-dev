@@ -208,6 +208,9 @@ h4 {
 section p {
   font-size: 1.2rem;
 }
+.footnote, .footnote p {
+  font-size: 10px;
+}
 /* buttons here! */
 .btn-link {
     color: var(--cfs-black);
