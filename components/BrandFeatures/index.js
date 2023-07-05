@@ -12,7 +12,7 @@ const BrandFeatures = ({ brandAttribute, brandImage, altText, attributeFootnote 
       <Container className={styles.keyAttribute}>
         <Row className={"m-4 d-flex align-items-center justify-content-center"}>
           <Col
-            md={{ span: 5 }}
+            md={{ span: 4 }}
             className={"mt-2"}
             data-speed="-.2"
             data-aos="fade-right"
@@ -23,7 +23,7 @@ const BrandFeatures = ({ brandAttribute, brandImage, altText, attributeFootnote 
           <p dangerouslySetInnerHTML={{ __html: brandAttribute }}></p>
           </Col>
 
-          <Col md={6} className="mb-5 mt-5">
+          <Col md={4} lg={5} className="mb-5 mt-5">
              <img  
            src={brandImage} 
             data-speed="-.2"
