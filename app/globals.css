@@ -369,3 +369,9 @@ html body .btn-primary:hover {
   color: var(--cfs-accent);
   border-color: var(--cfs-red);
 }
+
+.brand-logo:hover {
+  cursor: pointer;
+  transition: all .2s ease-in;
+  transform: scale(1.1);
+}

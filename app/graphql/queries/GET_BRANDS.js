@@ -24,6 +24,7 @@ const GET_BRANDS = gql`
             guid
             id
             slug
+            sourceUrl
             description
             altText
             uri

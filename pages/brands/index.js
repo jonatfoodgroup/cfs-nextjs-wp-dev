@@ -6,6 +6,7 @@ import client from "@/app/apollo-client";
 import "../../app/globals.css";
 import PageMeta from "@/components/PageMeta";
 import Slider from "react-slick";
+import Link from "next/link";
 const BrandsArchive = () => {
   const { loading, error, data } = useQuery(GET_BRANDS, {
     client: client,
@@ -16,8 +17,22 @@ const BrandsArchive = () => {
     <>
       <PageMeta title="Brands" description="Campbell's Foodservice Brands" />
       <Container>
+        <Row>
+          <Col>
+            <nav aria-label="breadcrumb">
+              <ol className="breadcrumb">
+                <li className="breadcrumb-item">
+                  <Link href="/">Home</Link>
+                </li>
+                <li className="breadcrumb-item active" aria-current="page">
+                  Brands
+                </li>
+              </ol>
+            </nav>
+          </Col>
+        </Row>
         <Row className={"align-middle"}>
-          <Col md={{ span: 6 }} className={"mt-5"} style={{ padding: "40px" }}>
+          <Col md={{ span: 6 }} className={"mt-5"} style={{ padding: "40px 80px 40px 0px" }}>
             <h2>
               We’ve been in the flavor game for over 150 years, and it shows.
             </h2>
@@ -106,7 +121,7 @@ const BrandCarousel = ({ brands, onClick }) => {
     arrows: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 6,
+    slidesToShow: 8,
     slidesToScroll: 6,
     responsive: [
       {
@@ -151,12 +166,14 @@ const Brand = ({ brand, onClick = () => {} }) => {
   }, [brand]);
   return (
     <Col>
+      <Button variant="link" onClick={onClick}>
       <img
         src={logoUrl}
-        className="img-fluid"
+        className="img-fluid brand-logo"
         alt="{brand.title}"
-        onClick={onClick}
+        
       />
+      </Button>
     </Col>
   );
 };

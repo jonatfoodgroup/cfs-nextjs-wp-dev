@@ -1,17 +1,17 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Button, Popover, OverlayTrigger } from "react-bootstrap";
 import styles from "./Nav.module.css";
 import BrandsMenu from "./Brands";
 import SegmentsMenu from "./Segments";
 import ProductsMenu from "./Products";
 import InspirationMenu from "./Inspiration";
-// Icon for caret down iconify
 import { Icon, InlineIcon } from "@iconify/react";
-
-
-
+import MobileNav from "./Mobile";
+// Use navigation 
+import { useRouter } from 'next/router';
 
 const NavMenu = () => {
+  const router = useRouter();
   const [selected, setSelected] = useState(null);
 
   const items = [
@@ -41,8 +41,15 @@ const NavMenu = () => {
     },
   ];
 
+  const navigate = (url) => {
+    // Ensure the url goes to /{url} and not appending to the current url
+    router.push(`/${url}`);
+    // Also close the menu
+    setSelected(null);
+  }
   return (
     <>
+    <MobileNav />
     <ul className={styles.nav}>
       {items.map((item) => (
         <OverlayTrigger
@@ -63,7 +70,9 @@ const NavMenu = () => {
           onToggle={() => setSelected(item.id)}
         >
           <li className={styles.navItem}>
-            <Button variant="link">{item.name} <Icon icon="akar-icons:chevron-down" /></Button>
+            <Button variant="link"
+              onClick={() => navigate(item.url)}
+            >{item.name} <Icon icon="akar-icons:chevron-down" /></Button>
           </li>
         </OverlayTrigger>
       ))}
