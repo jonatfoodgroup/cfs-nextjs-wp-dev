@@ -14,7 +14,7 @@ import "../../app/globals.css";
 
 import BrandMasthead from "@/components/BrandMasthead";
 import  BrandFeatures from "@/components/BrandFeatures";
-
+import BrandFootnote from "@/components/BrandFootnote";
 import BrandPromo from "@/components/BrandPromotionBanner";
 import ItemCarousel from "@/components/Carousels/ItemCarousel";
 
@@ -88,10 +88,13 @@ export default function Brand({ brand }) {
       <PageMeta title={brand.title} description={brand.description} />
       <BrandMasthead slug={brand.slug} />
       <BrandPromo />
-      {/* <BrandFeatures
-      
-      brandAttribute={brand.brandFields.keyAttribute} 
-      /> */}
+       <BrandFeatures
+        brandAttribute={brand.brandFields.keyAttribute} 
+        brandImage={brand.featuredImage.node.guid}
+        altText={brand.featuredImage.node.altText}
+        attributeFootnote={brand.brandFields.attributeFootnote}
+      />
+
       <Section title={"Get Inspired"} backgroundColor={"#F7F5F2"}>
         <HomeRecipes />
       </Section>
@@ -131,9 +134,8 @@ export default function Brand({ brand }) {
         </Row>
       </Container>
 
-      <Section title={"Product Catalog"} backgroundColor={"#f1f1f1"}>
-        
-      </Section>
+      <Section title={"Product Catalog"} backgroundColor={"#f1f1f1"}></Section>
+      <BrandFootnote attributeFootnote={brand.brandFields.attributeFootnote}/>
     </>
   );
 }

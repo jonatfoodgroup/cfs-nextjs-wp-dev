@@ -1,5 +1,3 @@
 
-.keyAttribute p {
-  font-size: 1.5rem;
-
-}
+.keyAttribute p { font-size: 1.5rem;}
+.keyAttribute p strong {color: var(--cfs-red);}

@@ -9,9 +9,16 @@ const GET_BRAND = gql`
       content
       excerpt
       slug
+      featuredImage {
+        node {
+          altText
+          guid
+        }
+      }
       brandFields {
         brandIntroHeadline
         keyAttribute
+        attributeFootnote
         brandLogo {
           sourceUrl
         }
