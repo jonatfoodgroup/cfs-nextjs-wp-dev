@@ -13,6 +13,7 @@ import Link from "next/link";
 const Inspiration = () => {
   return (
     <>
+    
       <Masthead />
       <Pillars />
       <Topics />
