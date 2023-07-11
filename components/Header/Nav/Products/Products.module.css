@@ -1,0 +1,6 @@
+.productMenuItem{
+  border:1px solid red !important;
+  display:flex;
+  justify-content: center;
+  
+}
