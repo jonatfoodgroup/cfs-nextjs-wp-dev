@@ -9,10 +9,28 @@
 }
 
 @media (min-width: 1000px) {
-    .brandMastheadIntro {
-        max-width: 30%;
+
+    .brandMastheadIntroOverlay {
+        
+        max-width: 50vw;
+        padding: 0 13%;
+        
     }
-    
+
+    .brandMastheadIntro div p {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 1300px) {
+
+.brandMastheadIntro div p {
+    font-size: 1.5rem;
+    margin-bottom: 6rem;
+    }
+}
+@media (min-width: 1600px) {
+
 }
 
 .brandImageLeft {

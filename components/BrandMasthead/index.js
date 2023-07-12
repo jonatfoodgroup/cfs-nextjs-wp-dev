@@ -67,6 +67,7 @@ const BrandMasthead = ({ slug }) => {
               data-aos-once="true"
               data-aos-delay="750"
             >
+              <div className={styles.brandMastheadIntroOverlay}>
               <img
                 src={data.brand.brandFields.brandLogo.sourceUrl}
                 alt="Goldfish"
@@ -79,6 +80,7 @@ const BrandMasthead = ({ slug }) => {
               <div
                 dangerouslySetInnerHTML={{ __html: data.brand.content }}
               ></div>
+              </div>
             </Col>
 
             <Col>
